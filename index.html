@@ -608,6 +608,60 @@ header.top.tabs-menu .tabmenu-expand:hover{color:var(--white);}
 #viewEvents .ev-gurl a{ color:var(--ev-text-2); }
 
 /* EV-CSS-END */
+/* WS-CSS-START */
+#viewWorkplace{ --ws-bg:#071a24; --ws-panel:#0d2532; --ws-panel2:#11303f; --ws-line:#24495a; --ws-text:#e8f1f4; --ws-text2:#b9cdd5; --ws-muted:#86a3ae; --ws-accent:#00c1d7; --ws-ink:#001a20; --ws-ok:#57d9a3; --ws-warn:#ffc46b; --ws-red:#ff8a9a; color:var(--ws-text); }
+#viewWorkplace .ws-root{ max-width:1180px; margin:0 auto; padding:24px 24px 48px; }
+#viewWorkplace .ws-lock{ max-width:540px; margin:40px auto; background:var(--ws-panel); border:1px solid var(--ws-line); border-top:4px solid var(--ws-accent); border-radius:6px; padding:22px; }
+#viewWorkplace .ws-eyebrow{ font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--ws-accent); }
+#viewWorkplace h2{ margin:6px 0 10px; font-size:22px; }
+#viewWorkplace h3{ margin:0 0 6px; font-size:16px; }
+#viewWorkplace p{ color:var(--ws-text2); line-height:1.55; }
+#viewWorkplace .ws-lbl{ display:block; font-size:13px; color:var(--ws-muted); margin:10px 0 4px; }
+#viewWorkplace input[type=password], #viewWorkplace input[type=text], #viewWorkplace input[type=email], #viewWorkplace textarea, #viewWorkplace select{
+  font:inherit; font-size:14px; background:var(--ws-bg); color:var(--ws-text); border:1px solid var(--ws-line); border-radius:4px; padding:8px 10px; }
+#viewWorkplace input[type=password], #viewWorkplace input[type=text], #viewWorkplace input[type=email]{ width:100%; }
+#viewWorkplace textarea{ width:100%; min-height:72px; resize:vertical; }
+#viewWorkplace .ws-row{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+#viewWorkplace .ws-row > input[type=text], #viewWorkplace .ws-row > input[type=email]{ flex:1; min-width:220px; width:auto; }
+#viewWorkplace .ws-btn{ display:inline-flex; align-items:center; gap:6px; background:var(--ws-accent); color:var(--ws-ink); border:1px solid var(--ws-accent); font:inherit; font-size:14px; padding:7px 13px; border-radius:4px; cursor:pointer; min-height:36px; }
+#viewWorkplace .ws-btn.ghost{ background:transparent; color:var(--ws-accent); }
+#viewWorkplace .ws-btn.small{ min-height:28px; padding:3px 9px; font-size:12.5px; }
+#viewWorkplace .ws-btn.sel{ background:var(--ws-ok); border-color:var(--ws-ok); color:var(--ws-ink); }
+#viewWorkplace .ws-btn[disabled]{ opacity:.45; cursor:not-allowed; }
+#viewWorkplace .ws-err{ color:var(--ws-red); font-size:13px; margin-top:8px; }
+#viewWorkplace .ws-ok{ color:var(--ws-ok); font-size:13px; margin-top:8px; }
+#viewWorkplace .ws-note{ color:var(--ws-muted); font-size:12.5px; margin-top:6px; }
+#viewWorkplace .ws-top{ display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-start; margin-bottom:12px; }
+#viewWorkplace .ws-top .ws-meta{ font-size:12.5px; color:var(--ws-muted); }
+#viewWorkplace .ws-nav{ display:flex; gap:4px; flex-wrap:wrap; border-bottom:1px solid var(--ws-line); margin-bottom:14px; }
+#viewWorkplace .ws-nav button{ background:none; border:0; border-bottom:3px solid transparent; color:var(--ws-text2); font:inherit; font-size:14px; padding:8px 12px; cursor:pointer; }
+#viewWorkplace .ws-nav button.on{ color:var(--ws-text); border-bottom-color:var(--ws-accent); }
+#viewWorkplace .ws-panel{ background:var(--ws-panel); border:1px solid var(--ws-line); border-radius:6px; padding:16px; margin-bottom:14px; }
+#viewWorkplace .ws-card{ background:var(--ws-panel2); border:1px solid var(--ws-line); border-radius:5px; padding:10px 12px; margin:8px 0; }
+#viewWorkplace .ws-card .t{ font-weight:700; }
+#viewWorkplace .ws-card .m{ font-size:12px; color:var(--ws-muted); margin:3px 0 5px; }
+#viewWorkplace .ws-card .d{ font-size:13.5px; color:var(--ws-text2); }
+#viewWorkplace .ws-card a, #viewWorkplace .ws-panel a{ color:var(--ws-accent); }
+#viewWorkplace .ws-sel{ float:right; font-size:12px; color:var(--ws-muted); }
+#viewWorkplace .ws-badge{ display:inline-block; font-size:11px; padding:1px 7px; border-radius:10px; margin-right:5px; background:#14495a; color:#bdf3fb; }
+#viewWorkplace .b-active{ background:#164d3a; color:#a7f3d0; }
+#viewWorkplace .b-pending, #viewWorkplace .b-announced, #viewWorkplace .b-drafting{ background:#5a4614; color:#fde68a; }
+#viewWorkplace .b-rumor, #viewWorkplace .b-expired{ background:#5a1f2a; color:#fecdd3; }
+#viewWorkplace .ws-ans{ white-space:pre-wrap; background:var(--ws-bg); border-left:3px solid var(--ws-accent); padding:10px 12px; border-radius:3px; color:var(--ws-text); margin-top:10px; }
+#viewWorkplace .ws-prompt{ min-height:160px; font-family:Consolas,monospace; font-size:12.5px; }
+#viewWorkplace .ws-stats{ display:flex; gap:18px; flex-wrap:wrap; font-size:13px; color:var(--ws-muted); }
+#viewWorkplace .ws-stats b{ color:var(--ws-text); font-size:16px; }
+#viewWorkplace .ws-qgrp h4{ margin:14px 0 4px; font-size:14px; color:var(--ws-text); }
+#viewWorkplace .ws-qitem{ display:grid; grid-template-columns:1fr auto; gap:8px; border-top:1px solid var(--ws-line); padding:8px 0; }
+#viewWorkplace .ws-qitem .dec{ display:flex; gap:4px; flex-wrap:wrap; align-items:flex-start; }
+#viewWorkplace .ws-qitem .st{ font-size:12px; color:var(--ws-ok); margin-top:2px; }
+#viewWorkplace .ws-wl{ border:1px solid var(--ws-warn); border-radius:5px; padding:10px 12px; margin:8px 0; background:#2b2410; }
+#viewWorkplace .ws-hidden{ display:none !important; }
+@media (max-width:700px){ #viewWorkplace .ws-root{ padding:16px 12px 40px; } #viewWorkplace .ws-qitem{ grid-template-columns:1fr; } }
+#viewWorkplace .ws-app{ background:rgba(4,20,28,.95); border:1px solid var(--ws-line); border-radius:8px; padding:18px 18px 8px; box-shadow:0 6px 24px rgba(0,0,0,.35); }
+#viewWorkplace .ws-app a.ws-btn{ text-decoration:none; }
+
+/* WS-CSS-END */
 </style>
 </head>
 <body>
@@ -623,6 +677,7 @@ header.top.tabs-menu .tabmenu-expand:hover{color:var(--white);}
       <button class="tabbtn" data-view="export"><span class="tab-dot yellow"></span><span class="tab-label-full">ЭКСПОРТНЫЙ КОНТРОЛЬ</span><span class="tab-label-short">ЭКСПОРТ</span></button>
       <button class="tabbtn" data-view="ru"><span class="tab-dot ruflag"></span><span class="tab-label-full">РОССИЙСКИЕ МЕРЫ / ЭКСПОРТНЫЕ ОГРАНИЧЕНИЯ</span><span class="tab-label-short">МЕРЫ РФ</span></button>
       <span class="tab-break" aria-hidden="true"></span><button class="tabbtn" data-view="fatca"><span class="tab-dot" style="background:#2f6fed;"></span><span class="tab-label-full">FATCA/CRS/ORS</span><span class="tab-label-short">FATCA/CRS/ORS</span></button>
+      <button class="tabbtn" data-view="workplace"><span class="tab-dot" style="background:#00c1d7;"></span><span class="tab-label-full">РАБОЧЕЕ МЕСТО СК</span><span class="tab-label-short">РАБОЧЕЕ МЕСТО СК</span></button>
       <button class="tabbtn" data-view="events"><span class="tab-dot" style="background:#7DD3FC;"></span><span class="tab-label-full">ВНЕШНИЕ МЕРОПРИЯТИЯ</span><span class="tab-label-short">МЕРОПРИЯТИЯ</span></button>
       <button class="tabbtn" data-view="restricted"><span class="tab-dot" style="background:#111111;"></span><span class="tab-label-full" id="restrictedTabLabelFull">ЗАКРЫТЫЙ РАЗДЕЛ</span><span class="tab-label-short" id="restrictedTabLabelShort">ЗАКРЫТЫЙ РАЗДЕЛ</span></button>
       <button type="button" class="tabmenu-expand" id="tabMenuExpand">&#8596; Показать вкладки в одну строку</button>
@@ -1373,6 +1428,21 @@ header.top.tabs-menu .tabmenu-expand:hover{color:var(--white);}
   <div class="ev-app" id="evApp" hidden></div>
 </div>
 </div><!-- /viewEvents -->
+
+<div id="viewWorkplace" style="display:none;">
+<div class="ws-root" id="wsRoot">
+  <div class="ws-lock" id="wsLock" role="form" aria-labelledby="wsLockTitle">
+    <span class="ws-eyebrow">Раздел с ограниченным доступом</span>
+    <h2 id="wsLockTitle">Рабочее место СК</h2>
+    <p>Инструменты Санкционного комплаенса по данным карты: вопрос по карте, очередь решений, проверка контрагента, черновики заключения и письма. Вход — паролем закрытого раздела. Пароль не сохраняется.</p>
+    <label class="ws-lbl" for="wsPassInput">Пароль</label>
+    <input type="password" id="wsPassInput" name="ws-access-code" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" data-lpignore="true" data-1p-ignore="true">
+    <div class="ws-row" style="margin-top:12px;"><button type="button" class="ws-btn" id="wsPassSubmit">Открыть раздел</button></div>
+    <p class="ws-err" id="wsPassError" role="alert" hidden></p>
+  </div>
+  <div class="ws-app" id="wsApp" hidden></div>
+</div>
+</div><!-- /viewWorkplace -->
 
 <footer>
   <div class="wrap">
@@ -9584,6 +9654,8 @@ document.querySelectorAll(".tabbtn").forEach(btn=>{
       if(vf) vf.style.display = view==="fatca" ? "" : "none";
       const vr = document.getElementById("viewRestricted");
       if(vr) vr.style.display = view==="restricted" ? "" : "none";
+      const vw = document.getElementById("viewWorkplace");
+      if(vw) vw.style.display = view==="workplace" ? "" : "none";
       const ve = document.getElementById("viewEvents");
       if(ve) ve.style.display = view==="events" ? "" : "none";
       if(view==="restricted" && !restrictedRendered && typeof renderRestricted === "function"){
@@ -11993,5 +12065,367 @@ window.EV_TEST = { matchStopList, evaluate: () => evaluate(), scanSegments, norm
 
 </script>
 <!-- EV-SCRIPTS-END -->
+<!-- WS-SCRIPTS-START -->
+<script>
+/* ================= РАЗДЕЛ «РАБОЧЕЕ МЕСТО СК» (версия 2.0) =================
+   Инструменты Санкционного комплаенса по данным карты: вопрос по карте, очередь решений, проверка контрагента,
+   черновики заключения и письма. Вход — паролем закрытого раздела (проверяется расшифровкой RESTRICTED_ENCRYPTED;
+   пароль не сохраняется). Поиск, очередь и проверка контрагента работают без ИИ и без сетевых запросов.
+   ИИ: по умолчанию — готовый запрос для вставки в Claude (копирование); если пользователь ввёл СВОЙ ключ Claude API —
+   ответ прямо на странице (запрос в api.anthropic.com; ключ хранится только в памяти вкладки до закрытия раздела).
+   В запросы к ИИ уходят только открытые карточки (до 6, в сокращении) и текст пользователя — сведения закрытого
+   раздела в запросы не включаются. Отметки очереди решений — только в этом браузере (localStorage), с экспортом/импортом. */
+(function(){
+'use strict';
+const ROOT = document.getElementById('viewWorkplace');
+if(!ROOT || typeof RESTRICTED_ENCRYPTED === 'undefined') return;
+const $ = id => document.getElementById(id);
+const LOCK = $('wsLock'), APP = $('wsApp');
+const STATUS = {active:'Действует',drafting:'Принята, не вступила',pending:'В процессе принятия',announced:'Заявлено официально',rumor:'Слух/неподтверждено',expired:'Истекла/требует сверки'};
+const MODELS = [['claude-sonnet-5-5','Claude Sonnet 5.5 (рекомендуется)'],['claude-haiku-5-5','Claude Haiku 5.5 (дешевле, быстрее)'],['claude-opus-5-5','Claude Opus 5.5 (сложные случаи)']];
+const MAX_CTX = 6, LS_DEC = 'cm2-ws-decisions';
+let S = null;                       // состояние открытого раздела (сбрасывается при закрытии)
+let fails = 0, lockUntil = 0;       // защита от подбора (в памяти вкладки)
+
+/* ---------- утилиты ---------- */
+const esc = s => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+const plain = s => String(s == null ? '' : s).replace(/<[^>]+>/g,'').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
+const cut = (s,n) => { s = plain(s); return s.length > n ? s.slice(0,n-1).trimEnd() + '…' : s; };
+const norm = s => plain(s).toLowerCase().replace(/ё/g,'е');
+const aLink = (u, t) => '<a target="_blank" rel="noopener" href=' + '"' + esc(u) + '">' + esc(t) + '</a>';   // ссылка на внешний первоисточник (только http/https — см. safeUrl)
+const safeUrl = u => /^https?:\/\//i.test(String(u||'').trim()) ? String(u).trim() : '';
+const TR = {а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'kh',ц:'ts',ч:'ch',ш:'sh',щ:'shch',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya'};
+const translit = s => [...s].map(c => TR[c] !== undefined ? TR[c] : c).join('');
+const latVariants = s => { const t = translit(s); return [t, t.replace(/y(?=[^aeiouy]|$)/g,'i'), t.replace(/kh/g,'h')]; };
+const parseRu = s => { const m = /(\d{2})\.(\d{2})\.(\d{4})/.exec(s||''); return m ? new Date(+m[3], +m[2]-1, +m[1]) : null; };
+const parseIso = s => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s||''); return m ? new Date(+m[1], +m[2]-1, +m[3]) : null; };
+const today = () => { const d = new Date(); d.setHours(0,0,0,0); return d; };
+const days = (a,b) => Math.round((b - a) / 864e5);
+const lsGet = k => { try{ return JSON.parse(localStorage.getItem(k) || 'null'); }catch(e){ return null; } };
+const lsSet = (k,v) => { try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } };
+function say(el, text, cls){ el.innerHTML = '<div class="' + (cls || 'ws-note') + '">' + esc(text) + '</div>'; }
+
+/* ---------- вход: пароль закрытого раздела ---------- */
+function b64(s){ const bin = atob(s); return Uint8Array.from(bin, c => c.charCodeAt(0)); }
+async function decryptRestricted(pw){
+  const E = RESTRICTED_ENCRYPTED, enc = new TextEncoder();
+  const km = await crypto.subtle.importKey('raw', enc.encode(pw), {name:'PBKDF2'}, false, ['deriveKey']);
+  const key = await crypto.subtle.deriveKey({name:'PBKDF2', salt:b64(E.salt), iterations:E.iterations, hash:'SHA-256'}, km, {name:'AES-GCM', length:256}, false, ['decrypt']);
+  const buf = await crypto.subtle.decrypt({name:'AES-GCM', iv:b64(E.iv)}, key, b64(E.ciphertext));
+  return JSON.parse(new TextDecoder().decode(buf));
+}
+async function submit(){
+  const inp = $('wsPassInput'), err = $('wsPassError'), btn = $('wsPassSubmit');
+  const pw = inp.value; inp.value = '';
+  err.hidden = true;
+  const wait = lockUntil - Date.now();
+  if(wait > 0){ err.textContent = 'Слишком много попыток. Повторите через ' + Math.ceil(wait/1000) + ' с.'; err.hidden = false; return; }
+  if(!pw){ err.textContent = 'Введите пароль.'; err.hidden = false; return; }
+  if(!(window.crypto && crypto.subtle)){ err.textContent = 'Браузер не поддерживает безопасную проверку пароля (Web Crypto API). Откройте карту в современном браузере.'; err.hidden = false; return; }
+  btn.disabled = true; btn.textContent = 'Проверка…';
+  let R = null;
+  try{ R = await decryptRestricted(pw); }catch(e){ R = null; }
+  btn.disabled = false; btn.textContent = 'Открыть раздел';
+  if(!R){
+    fails++; if(fails >= 3) lockUntil = Date.now() + Math.min(300000, 5000 * Math.pow(2, fails - 3));
+    err.textContent = 'Неверный пароль.'; err.hidden = false; return;
+  }
+  fails = 0; lockUntil = 0;
+  open(R);
+}
+$('wsPassSubmit').addEventListener('click', submit);
+$('wsPassInput').addEventListener('keydown', e => { if(e.key === 'Enter') submit(); });
+
+/* ---------- данные карты (открытая часть страницы) ---------- */
+function collectCards(){
+  const out = [];
+  const groups = [[typeof SECTIONS !== 'undefined' ? SECTIONS : [], 'Санкции'], [typeof EXPORT_CONTROL !== 'undefined' ? EXPORT_CONTROL : [], 'Экспортный контроль'], [typeof RUSSIAN_MEASURES !== 'undefined' ? RUSSIAN_MEASURES : [], 'Меры РФ']];
+  for(const [arr, gname] of groups) for(const s of arr) for(const it of (s.items || [])) out.push(mk(gname, plain(s.title), it, gname + '|' + s.id + '|' + it.title));
+  for(const r of (typeof RUMORS !== 'undefined' ? RUMORS : [])) out.push(mk('Слухи', 'Слухи и шум', { status:'rumor', date:r.date, title:r.title, desc:r.desc, detail:'', tags:[], source:{ label:'уровень ' + (r.level || '—'), url:'', level:r.level } }, 'RUMORS|' + r.title));
+  return out;
+}
+function mk(gname, sec, it, key){
+  return { key, gname, sec, it, nt:norm(it.title), ntag:norm((it.tags||[]).join(' ')), nd:norm(it.desc), ndet:norm(it.detail), ndate:norm(it.date), nsrc:norm((it.source||{}).label) };
+}
+function watchRows(R){   // строки списка наблюдения (только для локального сопоставления; в ИИ не передаются)
+  const w = R && R.watchlist, rows = [];
+  for(const g of ((w && w.groups) || [])) for(const r of (g.rows || [])) rows.push({ group: plain(g.name), cells: r.map(plain), hay: norm(r.slice(0,2).join(' ')) });
+  return rows;
+}
+
+/* ---------- поиск без ИИ ---------- */
+const STOP = new Set('и в во на по с со к ко о об от до из за для при что как какие какой какая каких ли или не нет это эти есть был была были будет все всех the of and for to in on a an is are'.split(' '));
+function terms(q){
+  return [...new Set(norm(q).split(/[^a-zа-я0-9.\-]+/i).filter(w => w.length >= 2 && !STOP.has(w)))]
+    .map(w => w.length > 6 && /[а-я]/.test(w) ? w.slice(0, w.length > 8 ? 6 : 5) : w);
+}
+function search(q, limit){
+  const ts = terms(q); if(!ts.length) return [];
+  const out = [];
+  for(const c of S.cards){
+    let s = 0, hit = 0;
+    for(const t of ts){ let h = 0;
+      if(c.nt.includes(t)) h += 4; if(c.ntag.includes(t)) h += 2; if(c.nd.includes(t)) h += 2;
+      if(c.ndet.includes(t)) h += 1; if(c.ndate.includes(t)) h += 1; if(c.nsrc.includes(t)) h += 0.5;
+      if(h){ hit++; s += h; } }
+    if(!hit) continue;
+    s *= (0.5 + hit / ts.length); if(c.it.status === 'active') s *= 1.05;
+    out.push({ c, s });
+  }
+  return out.sort((a,b) => b.s - a.s).slice(0, limit || 10).map(x => x.c);
+}
+function cardHtml(c, n){
+  const it = c.it, src = it.source || {}, u = safeUrl(src.url);
+  return '<div class="ws-card"><label class="ws-sel"><input type="checkbox" class="ws-selc" data-k="' + esc(c.key) + '"' + (S.sel.has(c.key) ? ' checked' : '') + '> в письмо</label>' +
+    '<div class="t">' + (n ? '[' + n + '] ' : '') + esc(cut(it.title, 220)) + '</div>' +
+    '<div class="m"><span class="ws-badge b-' + esc(it.status) + '">' + esc(STATUS[it.status] || it.status) + '</span>' + esc(c.gname) + ' · ' + esc(c.sec) + ' · ' + esc(cut(it.date, 80)) + (it.verified ? ' · сверено ' + esc(it.verified) : '') + '</div>' +
+    '<div class="d">' + esc(cut(it.desc, 360)) + '</div>' +
+    '<div class="m">Источник: ' + esc(cut(src.label, 120)) + (src.level ? ' (уровень ' + esc(src.level) + ')' : '') + (u ? ' · ' + aLink(u, 'первоисточник') : '') + '</div></div>';
+}
+function ctxBlock(cards){
+  return cards.map((c, i) => { const it = c.it, s = it.source || {};
+    return '[' + (i+1) + '] ' + c.gname + ' / ' + c.sec + ' | ' + (STATUS[it.status] || it.status) + ' | ' + cut(it.date, 80) + ' | ' + cut(it.title, 200) + '\n' + cut(it.desc, 260) + (it.detail ? '\n' + cut(it.detail, 480) : '') +
+      '\nИсточник: ' + cut(s.label, 100) + ' ' + safeUrl(s.url) + ' (уровень ' + (s.level || '—') + '); сверено: ' + (it.verified || '—'); }).join('\n\n');
+}
+const cutDate = () => (typeof MAP_META !== 'undefined' && MAP_META.cut) || '—';
+const RULES = () => 'Ты — помощник комплаенс-офицера по санкциям против России. Пиши по-русски, строгим деловым языком, кратко. Используй ТОЛЬКО сведения из приведённых карточек Комплаенс-карты (срез ' + cutDate() + '); ничего не добавляй от себя и из памяти. Если в карточках нет ответа — так и напиши: «В карте нет данных по этому вопросу». Ссылайся на карточки номерами в квадратных скобках. Не давай окончательных юридических выводов: решение принимает комплаенс-офицер. «Санкционный комплаенс» пиши с заглавной буквы первого слова.';
+
+/* ---------- ИИ: свой ключ Claude API или готовый запрос ---------- */
+async function callClaude(prompt, maxTokens){
+  const ctl = new AbortController(), t = setTimeout(() => ctl.abort(), 120000);
+  try{
+    const r = await fetch('https://api.anthropic.com/v1/messages', { method:'POST', signal: ctl.signal,
+      headers:{ 'content-type':'application/json', 'x-api-key': S.apiKey, 'anthropic-version':'2023-06-01', 'anthropic-dangerous-direct-browser-access':'true' },
+      body: JSON.stringify({ model: S.model, max_tokens: maxTokens, messages:[{ role:'user', content: prompt }] }) });
+    let j = null; try{ j = await r.json(); }catch(e){}
+    if(!r.ok){
+      const m = (j && j.error && j.error.message) || ('HTTP ' + r.status);
+      if(r.status === 401) throw new Error('ключ API не принят (401). Проверьте ключ в разделе «Настройки ИИ».');
+      if(r.status === 429) throw new Error('превышен лимит запросов API (429). Повторите позже.');
+      if(r.status === 404 || /model/i.test(m)) throw new Error('модель недоступна для вашего ключа: ' + m);
+      throw new Error(m);
+    }
+    const text = ((j && j.content) || []).filter(b => b.type === 'text').map(b => b.text).join('\n').trim();
+    const u = (j && j.usage) || {};
+    S.usage.in += u.input_tokens || 0; S.usage.out += u.output_tokens || 0; S.usage.n++;
+    renderUsage();
+    return { text, truncated: j && j.stop_reason === 'max_tokens', usage: u };
+  }catch(e){
+    if(e.name === 'AbortError') throw new Error('нет ответа от Claude API за 2 минуты.');
+    if(e instanceof TypeError) throw new Error('запрос к Claude API не прошёл (сеть, прокси или блокировка api.anthropic.com).');
+    throw e;
+  }finally{ clearTimeout(t); }
+}
+/* Если ключ задан — отвечает Claude на странице; иначе — показывает готовый запрос для копирования в Claude. */
+async function runAI(outEl, prompt, maxTokens, onText){
+  if(S.apiKey){
+    outEl.innerHTML = '<div class="ws-ans">Готовлю ответ…</div>';
+    try{ const r = await callClaude(prompt, maxTokens);
+      if(!S || !document.body.contains(outEl)) return;          // раздел закрыли, пока шёл ответ
+      if(onText) return onText(r);
+      outEl.innerHTML = '<div class="ws-ans">' + esc(r.text + (r.truncated ? '\n[ответ обрезан по лимиту]' : '')) + '</div><div class="ws-note">Токены: ' + (r.usage.input_tokens || 0) + ' на входе, ' + (r.usage.output_tokens || 0) + ' на выходе.</div>';
+    }catch(e){ if(S && document.body.contains(outEl)) say(outEl, 'Claude API: ' + e.message, 'ws-err'); }
+  } else {
+    outEl.innerHTML = '<div class="ws-note">Ключ Claude API не задан — подготовлен запрос (' + prompt.length + ' знаков). Скопируйте его и вставьте в Claude.</div>' +
+      '<textarea class="ws-prompt" readonly>' + esc(prompt) + '</textarea>' +
+      '<div class="ws-row" style="margin-top:6px"><button type="button" class="ws-btn ws-copy">Скопировать запрос</button><a class="ws-btn ghost" href="https://claude.ai/new" target="_blank" rel="noopener">Открыть Claude</a></div>';
+  }
+}
+
+/* ---------- приложение ---------- */
+function open(R){
+  S = { cards: collectCards(), watch: watchRows(R), sel: new Map(), apiKey: '', model: MODELS[0][0], usage: { in:0, out:0, n:0 }, partyHits: [] };
+  R = null;
+  LOCK.hidden = true; APP.hidden = false;
+  APP.innerHTML =
+  '<div class="ws-top"><div><span class="ws-eyebrow">Санкционный комплаенс</span><h2 style="margin:4px 0 0">Рабочее место СК</h2><div class="ws-meta">Данные карты: срез ' + esc(cutDate()) + ' · карточек ' + S.cards.length + ' · ИИ: <span id="wsAiState">готовый запрос (ключ API не задан)</span></div></div>' +
+  '<button type="button" class="ws-btn ghost" id="wsClose">Закрыть раздел</button></div>' +
+  '<nav class="ws-nav" id="wsNav"><button data-t="ask" class="on">Спросить карту</button><button data-t="queue">Очередь решений</button><button data-t="party">Проверка контрагента</button><button data-t="mail">Черновик письма</button><button data-t="ai">Настройки ИИ</button></nav>' +
+
+  '<section data-p="ask"><div class="ws-panel"><h3>Вопрос по данным карты</h3><p>Сначала поиск по карточкам без ИИ. Claude получает только найденные карточки (до 6, в сокращении) и отвечает со ссылками на них. Если карточек нет, обращения к ИИ нет.</p>' +
+    '<div class="ws-row"><input type="text" id="wsQ" placeholder="Например: какие лицензии OFAC по Lukoil истекают в ноябре?" autocomplete="off"><button type="button" class="ws-btn ghost" id="wsFind">Найти в карте</button><button type="button" class="ws-btn" id="wsAsk">Спросить Claude</button></div>' +
+    '<div id="wsAskAi"></div><div id="wsAskOut"></div></div></section>' +
+
+  '<section data-p="queue" class="ws-hidden"><div class="ws-panel"><h3>Очередь решений</h3><p>Пункты формируются из карты автоматически, без ИИ: незавершённые меры, слухи, истёкшие и истекающие сроки, контрольные даты на 14 дней, карточки без сверки более 30 дней. Отметки сохраняются только в этом браузере; для переноса — экспорт и импорт. Карту отметки не меняют.</p>' +
+    '<div class="ws-stats" id="wsQStats"></div>' +
+    '<div class="ws-row" style="margin-top:8px"><select id="wsQFilter"><option value="open">Без решения</option><option value="all">Все</option><option value="done">С решением</option></select>' +
+    '<button type="button" class="ws-btn ghost small" id="wsQExport">Экспорт отметок (JSON)</button><label class="ws-btn ghost small" style="cursor:pointer">Импорт отметок<input type="file" id="wsQImport" accept="application/json,.json" style="display:none"></label></div>' +
+    '<div class="ws-note" id="wsQStore"></div><div id="wsQList"></div></div></section>' +
+
+  '<section data-p="party" class="ws-hidden"><div class="ws-panel"><h3>Проверка контрагента</h3><p>Поиск наименования, ФИО или ИНН в карточках карты и в списке наблюдения закрытого раздела, без ИИ. Это не замена скрининга по официальным спискам: ссылки на них — в результате.</p>' +
+    '<div class="ws-row"><input type="text" id="wsPName" placeholder="Наименование / ФИО / ИНН (кириллицей или латиницей)" autocomplete="off"><button type="button" class="ws-btn" id="wsPGo">Проверить</button></div>' +
+    '<div id="wsPOut"></div>' +
+    '<div id="wsPConcl" class="ws-hidden" style="margin-top:12px"><p class="ws-note">Черновик «Заключения»: общие сведения → скрининг → значимое обстоятельство → оценка риска → выводы с условиями → оговорка о решении оператора. В запрос к ИИ уходят только открытые карточки и введённые вами факты.</p>' +
+      '<textarea id="wsPFacts" placeholder="Факты по сделке: предмет, стороны, страна, валюта и банк платежа, собственники (если известны)"></textarea>' +
+      '<div class="ws-row" style="margin-top:6px"><button type="button" class="ws-btn" id="wsPDraft">Черновик заключения</button></div><div id="wsPDraftOut"></div></div></div></section>' +
+
+  '<section data-p="mail" class="ws-hidden"><div class="ws-panel"><h3>Черновик письма</h3><p>Отметьте «в письмо» у нужных карточек в разделах «Спросить карту» или «Проверка контрагента». Текст готовит Claude; письмо открывается в вашей почтовой программе или копируется — отправляете вы.</p>' +
+    '<div class="ws-note" id="wsMSel"></div>' +
+    '<div class="ws-row" style="margin-top:8px"><input type="email" id="wsMTo" placeholder="Кому (адрес)" autocomplete="off"><select id="wsMPurpose"><option value="инфо">Информирование руководства</option><option value="коллеге">Ответ коллеге на вопрос</option><option value="контрагенту">Запрос контрагенту (санкционные заверения)</option></select></div>' +
+    '<textarea id="wsMNote" style="margin-top:8px" placeholder="Что важно сказать (необязательно)"></textarea>' +
+    '<div class="ws-row" style="margin-top:6px"><button type="button" class="ws-btn" id="wsMCompose">Подготовить текст</button></div><div id="wsMAi"></div>' +
+    '<div id="wsMEdit" class="ws-hidden" style="margin-top:10px"><label class="ws-lbl">Тема</label><input type="text" id="wsMSubj"><label class="ws-lbl">Текст</label><textarea id="wsMBody" style="min-height:220px"></textarea>' +
+      '<div class="ws-row" style="margin-top:6px"><button type="button" class="ws-btn" id="wsMOpen">Открыть в почте</button><button type="button" class="ws-btn ghost" id="wsMCopy">Скопировать текст</button></div></div><div id="wsMOut"></div></div></section>' +
+
+  '<section data-p="ai" class="ws-hidden"><div class="ws-panel"><h3>Настройки ИИ</h3><p>Без ключа раздел готовит запрос, который вы вставляете в свой Claude (claude.ai). С ключом Claude API ответ приходит прямо сюда: запрос уходит с этой страницы напрямую в api.anthropic.com. Ключ хранится только в памяти этой вкладки и стирается при закрытии раздела или перезагрузке; на сайт карты и в репозиторий он не попадает. Использование API оплачивается по вашему ключу.</p>' +
+    '<label class="ws-lbl" for="wsKey">Ключ Claude API</label><input type="password" id="wsKey" autocomplete="off" spellcheck="false" placeholder="sk-ant-…" data-lpignore="true" data-1p-ignore="true">' +
+    '<label class="ws-lbl" for="wsModel">Модель</label><select id="wsModel">' + MODELS.map(m => '<option value="' + m[0] + '">' + esc(m[1]) + '</option>').join('') + '</select>' +
+    '<div class="ws-row" style="margin-top:10px"><button type="button" class="ws-btn" id="wsKeySave">Применить</button><button type="button" class="ws-btn ghost" id="wsKeyTest">Проверить ключ</button><button type="button" class="ws-btn ghost" id="wsKeyClear">Удалить ключ</button></div>' +
+    '<div id="wsKeyOut"></div><div class="ws-note" id="wsUsage"></div></div></section>';
+
+  bind(); renderQueue(); renderSel(); renderUsage();
+}
+function close(){
+  S = null; APP.innerHTML = ''; APP.hidden = true; LOCK.hidden = false;
+  const e = $('wsPassError'); if(e) e.hidden = true;
+}
+function bind(){
+  $('wsClose').onclick = close;
+  $('wsNav').onclick = e => { const b = e.target.closest('button[data-t]'); if(!b) return;
+    APP.querySelectorAll('#wsNav button').forEach(x => x.classList.toggle('on', x === b));
+    APP.querySelectorAll('section[data-p]').forEach(s => s.classList.toggle('ws-hidden', s.dataset.p !== b.dataset.t));
+    if(b.dataset.t === 'mail') renderSel(); };
+  APP.addEventListener('change', e => { const el = e.target; if(!el.classList.contains('ws-selc')) return;
+    const c = S.cards.find(x => x.key === el.dataset.k); if(!c) return;
+    if(el.checked) S.sel.set(c.key, c); else S.sel.delete(c.key); renderSel(); });
+  APP.addEventListener('click', async e => { const b = e.target.closest('.ws-copy'); if(!b) return;
+    const ta = b.closest('div').previousElementSibling;
+    try{ await navigator.clipboard.writeText(ta.value); b.textContent = 'Скопировано'; }catch(err){ ta.select(); b.textContent = 'Выделено — нажмите Ctrl+C'; } });
+
+  /* вопрос */
+  const show = (found, intro) => { $('wsAskOut').innerHTML = '<div class="ws-note">' + esc(intro) + '</div>' + found.map((c, i) => cardHtml(c, i+1)).join(''); };
+  $('wsFind').onclick = () => { const q = $('wsQ').value.trim(); if(!q) return; $('wsAskAi').innerHTML = '';
+    const f = search(q, 10); if(!f.length) return say($('wsAskOut'), 'В карте нет карточек по этому запросу. Уточните формулировку (ведомство, номер лицензии, компания).');
+    show(f, 'Найдено карточек: ' + f.length + '. ИИ не использовался.'); };
+  $('wsQ').addEventListener('keydown', e => { if(e.key === 'Enter') $('wsAsk').click(); });
+  $('wsAsk').onclick = async () => { const q = $('wsQ').value.trim(); if(!q) return;
+    const f = search(q, MAX_CTX);
+    if(!f.length){ $('wsAskAi').innerHTML = ''; return say($('wsAskOut'), 'В карте нет карточек по этому запросу — обращения к ИИ не было.'); }
+    show(f, 'Карточки, переданные Claude: ' + f.length + '.');
+    const b = $('wsAsk'); b.disabled = true;
+    await runAI($('wsAskAi'), RULES() + ' Ответ — не более 180 слов; в конце строка «Основание: [номера]».\n\nКАРТОЧКИ:\n' + ctxBlock(f) + '\n\nВОПРОС: ' + q, 700);
+    b.disabled = false; };
+
+  /* очередь */
+  $('wsQFilter').onchange = renderQueue;
+  $('wsQList').onclick = e => { const b = e.target.closest('button.ws-qd'); if(!b) return;
+    const d = lsGet(LS_DEC) || {}; if(b.dataset.v) d[b.dataset.id] = { v: b.dataset.v, at: new Date().toLocaleDateString('ru-RU'), t: b.dataset.title }; else delete d[b.dataset.id];
+    if(!lsSet(LS_DEC, d)) $('wsQStore').textContent = 'Браузер не разрешает сохранять данные — отметки действуют до перезагрузки страницы.';
+    S.mem = d; renderQueue(); };
+  $('wsQExport').onclick = () => { const d = lsGet(LS_DEC) || S.mem || {};
+    const blob = new Blob([JSON.stringify({ schema:'cm2-ws-decisions/1', exported: new Date().toISOString(), cut: cutDate(), decisions: d }, null, 1)], { type:'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'reshenia-SK-' + cutDate().replace(/\./g,'-') + '.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
+  $('wsQImport').onchange = e => { const f = e.target.files && e.target.files[0]; if(!f) return; const r = new FileReader();
+    r.onload = () => { try{ const j = JSON.parse(r.result); if(!j || j.schema !== 'cm2-ws-decisions/1' || typeof j.decisions !== 'object') throw new Error('не тот формат');
+        const d = Object.assign(lsGet(LS_DEC) || {}, j.decisions); lsSet(LS_DEC, d); S.mem = d; renderQueue(); $('wsQStore').textContent = 'Импортировано отметок: ' + Object.keys(j.decisions).length + '.'; }
+      catch(err){ $('wsQStore').textContent = 'Файл не подходит: ' + err.message; } e.target.value = ''; };
+    r.readAsText(f, 'UTF-8'); };
+
+  /* контрагент */
+  $('wsPName').addEventListener('keydown', e => { if(e.key === 'Enter') $('wsPGo').click(); });
+  $('wsPGo').onclick = party;
+  $('wsPDraft').onclick = async () => { const facts = $('wsPFacts').value.trim(), name = $('wsPName').value.trim();
+    if(!facts) return say($('wsPDraftOut'), 'Опишите факты по сделке — без них заключение будет пустым.', 'ws-err');
+    const ctx = S.partyHits.slice(0, 5); const b = $('wsPDraft'); b.disabled = true;
+    await runAI($('wsPDraftOut'), RULES() + ' Подготовь ЧЕРНОВИК «Заключения» Санкционного комплаенса (не более 450 слов) по разделам: 1) Общие сведения; 2) Санкционный скрининг контрагентов (что найдено в карте и что ОБЯЗАТЕЛЬНО проверить по официальным спискам OFAC, ЕС, Великобритании — без утверждений о результатах, которых нет в карточках); 3) Значимое обстоятельство; 4) Оценка риска по сценариям (вероятность, ущерб, горизонт — только реальные риски); 5) Выводы в форме «имеются основания для вывода о … риске» с условиями (а)(б)(в); 6) Оговорка: окончательное решение остаётся за оператором. Где данных нет — «требует проверки».\n\nКОНТРАГЕНТ: ' + name + '\nФАКТЫ (со слов пользователя): ' + facts + '\n\nКАРТОЧКИ КАРТЫ С УПОМИНАНИЯМИ:\n' + (ctx.length ? ctxBlock(ctx) : 'упоминаний в карте нет'), 1500);
+    b.disabled = false; };
+
+  /* письмо */
+  $('wsMCompose').onclick = async () => { const sel = [...S.sel.values()], note = $('wsMNote').value.trim();
+    if(!sel.length && !note) return say($('wsMOut'), 'Выберите карточки или опишите, что сказать.', 'ws-err');
+    const kind = { 'инфо':'краткое информационное письмо руководству о мерах и их значении для компании', 'коллеге':'ответ коллеге на вопрос по санкционным мерам', 'контрагенту':'вежливый запрос контрагенту о предоставлении санкционных заверений и сведений о собственниках и банках платежа' }[$('wsMPurpose').value];
+    const prompt = RULES() + ' Составь ' + kind + '. Только факты из карточек; ссылки на первоисточники — списком в конце; не более 220 слов; без Markdown. Первая строка ответа — «Тема: …», затем пустая строка и текст письма.\n\nКАРТОЧКИ:\n' + (sel.length ? ctxBlock(sel.slice(0, MAX_CTX)) : 'нет') + '\n\nДОПОЛНИТЕЛЬНО ОТ ПОЛЬЗОВАТЕЛЯ: ' + (note || '—');
+    const b = $('wsMCompose'); b.disabled = true; $('wsMOut').innerHTML = '';
+    await runAI($('wsMAi'), prompt, 700, r => { const m = /^\s*Тема:\s*(.+)\n+([\s\S]*)$/.exec(r.text || '');
+      $('wsMSubj').value = m ? plain(m[1]).slice(0, 200) : 'Санкционный комплаенс: информация';
+      $('wsMBody').value = m ? m[2].trim() : (r.text || '');
+      $('wsMAi').innerHTML = '<div class="ws-note">Текст подготовлен (токены: ' + (r.usage.input_tokens || 0) + ' / ' + (r.usage.output_tokens || 0) + '). Проверьте и поправьте.</div>';
+      $('wsMEdit').classList.remove('ws-hidden'); });
+    if(!S) return;
+    if(!S.apiKey){ $('wsMEdit').classList.remove('ws-hidden'); $('wsMAi').insertAdjacentHTML('beforeend', '<div class="ws-note">Ответ Claude вставьте в поля «Тема» и «Текст» ниже.</div>'); }
+    if(b) b.disabled = false; };
+  $('wsMOpen').onclick = () => { const to = $('wsMTo').value.trim();
+    if(to && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) return say($('wsMOut'), 'Проверьте адрес получателя.', 'ws-err');
+    const subj = $('wsMSubj').value, body = $('wsMBody').value;
+    const href = 'mailto:' + encodeURIComponent(to) + '?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+    if(href.length > 1900) say($('wsMOut'), 'Текст длинный: почтовая программа может его обрезать — при необходимости вставьте полный текст кнопкой «Скопировать текст».');
+    else $('wsMOut').innerHTML = '';
+    const a = document.createElement('a'); a.href = href; a.rel = 'noopener'; document.body.appendChild(a); a.click(); a.remove(); };
+  $('wsMCopy').onclick = async () => { try{ await navigator.clipboard.writeText($('wsMSubj').value + '\n\n' + $('wsMBody').value); say($('wsMOut'), 'Текст скопирован.', 'ws-ok'); }catch(e){ say($('wsMOut'), 'Браузер не разрешил копирование — выделите текст вручную.', 'ws-err'); } };
+
+  /* ключ API */
+  $('wsKeySave').onclick = () => { const k = $('wsKey').value.trim(); $('wsKey').value = '';
+    if(k && !/^sk-ant-[A-Za-z0-9_\-]{20,}$/.test(k)) return say($('wsKeyOut'), 'Не похоже на ключ Claude API (должен начинаться с sk-ant-).', 'ws-err');
+    S.apiKey = k; S.model = $('wsModel').value; aiState();
+    say($('wsKeyOut'), k ? 'Ключ применён до закрытия раздела. Модель: ' + S.model + '.' : 'Ключ не задан — раздел готовит запросы для копирования.', 'ws-ok'); };
+  $('wsModel').onchange = () => { S.model = $('wsModel').value; aiState(); };
+  $('wsKeyClear').onclick = () => { S.apiKey = ''; $('wsKey').value = ''; aiState(); say($('wsKeyOut'), 'Ключ удалён.', 'ws-ok'); };
+  $('wsKeyTest').onclick = async () => { if(!S.apiKey) return say($('wsKeyOut'), 'Сначала введите ключ и нажмите «Применить».', 'ws-err');
+    say($('wsKeyOut'), 'Проверяю…');
+    try{ const r = await callClaude('Ответь одним словом: «готово».', 10); say($('wsKeyOut'), 'Ключ работает (' + S.model + '): ' + r.text, 'ws-ok'); }
+    catch(e){ say($('wsKeyOut'), 'Claude API: ' + e.message, 'ws-err'); } };
+}
+function aiState(){ const el = $('wsAiState'); if(el) el.textContent = S.apiKey ? 'Claude API, ' + S.model : 'готовый запрос (ключ API не задан)'; }
+function renderUsage(){ const el = $('wsUsage'); if(el && S) el.textContent = S.usage.n ? 'За этот сеанс: запросов ' + S.usage.n + ', токенов на входе ' + S.usage.in + ', на выходе ' + S.usage.out + '.' : ''; }
+function renderSel(){ const el = $('wsMSel'); if(!el || !S) return;
+  el.textContent = S.sel.size ? 'Выбрано карточек: ' + S.sel.size + ' — ' + [...S.sel.values()].map(c => cut(c.it.title, 60)).join('; ') : 'Карточки не выбраны: отметьте «в письмо» в результатах поиска.'; }
+
+/* ---------- очередь решений (без ИИ) ---------- */
+const DEC = [['note','Принято к сведению'],['check','Нужна проверка'],['escalate','Эскалировать руководству']];
+const keyId = k => { let h = 2166136261; for(let i = 0; i < k.length; i++){ h ^= k.charCodeAt(i); h = Math.imul(h, 16777619); } return 'd' + (h >>> 0).toString(36) + k.length.toString(36); };
+function buildQueue(){
+  const t0 = today(), items = [];
+  const add = (cat, c, why) => items.push({ id: keyId(cat + '|' + c.key), cat, c, why });
+  for(const c of S.cards){ const it = c.it;
+    if(c.gname === 'Слухи' || it.status === 'rumor'){ add('Слухи: подтвердить или опровергнуть', c, c.gname === 'Слухи' ? 'не подтверждено первичным документом' : 'статус «Слух»'); continue; }
+    if(['pending','announced','drafting'].includes(it.status)) add('Незавершённые меры: следить за статусом', c, STATUS[it.status]);
+    const ex = parseIso(it.expires);
+    if(ex && it.status !== 'expired'){ const n = days(t0, ex); if(n < 0) add('Сроки: истекли — нужна сверка', c, 'срок истёк ' + ex.toLocaleDateString('ru-RU')); else if(n <= 14) add('Сроки: истекают в ближайшие 14 дней', c, 'истекает через ' + n + ' дн. (' + ex.toLocaleDateString('ru-RU') + ')'); }
+    const v = parseRu(it.verified); if(v && days(v, t0) > 30 && it.status !== 'expired') add('Давно не сверялось (более 30 дней)', c, 'сверено ' + it.verified);
+  }
+  for(const x of ((typeof DEADLINES !== 'undefined' && DEADLINES.items) || [])){ const d = parseIso(x.date); if(!d) continue; const n = days(t0, d);
+    if(n <= 14) add(n < 0 ? 'Контрольные даты: наступили' : 'Контрольные даты: 14 дней', { key: 'DL|' + x.date + '|' + x.text, gname: 'Контрольная дата', sec: plain(x.jur || ''), it: { status: n < 0 ? 'expired' : 'pending', date: x.date, title: plain(x.text), source: {} } }, n < 0 ? 'дата прошла ' + (-n) + ' дн. назад' : n === 0 ? 'сегодня' : 'через ' + n + ' дн.'); }
+  return items;
+}
+function renderQueue(){
+  if(!S) return;
+  const dec = lsGet(LS_DEC) || S.mem || {}, items = buildQueue(), f = $('wsQFilter').value;
+  const done = items.filter(x => dec[x.id]).length;
+  $('wsQStats').innerHTML = '<span>Всего <b>' + items.length + '</b></span><span>Без решения <b>' + (items.length - done) + '</b></span><span>С решением <b>' + done + '</b></span>';
+  if(!$('wsQStore').textContent) $('wsQStore').textContent = 'Отметки хранятся только в этом браузере.';
+  const show = items.filter(x => f === 'all' ? true : f === 'done' ? !!dec[x.id] : !dec[x.id]);
+  const groups = {}; show.forEach(x => (groups[x.cat] = groups[x.cat] || []).push(x));
+  $('wsQList').innerHTML = Object.keys(groups).length ? Object.entries(groups).map(([cat, arr]) => '<div class="ws-qgrp"><h4>' + esc(cat) + ' (' + arr.length + ')</h4>' + arr.slice(0, 60).map(x => {
+    const it = x.c.it, u = safeUrl((it.source || {}).url), d = dec[x.id];
+    return '<div class="ws-qitem"><div><div class="t" style="font-weight:700">' + esc(cut(it.title, 200)) + '</div><div class="ws-note" style="margin-top:2px">' + esc(x.c.gname) + (x.c.sec ? ' · ' + esc(x.c.sec) : '') + ' · ' + esc(x.why) + (u ? ' · ' + aLink(u, 'первоисточник') : '') + '</div>' +
+      (d ? '<div class="st">Решение: ' + esc((DEC.find(z => z[0] === d.v) || ['',''])[1]) + ' · ' + esc(d.at || '') + '</div>' : '') + '</div>' +
+      '<div class="dec">' + DEC.map(([v, l]) => '<button type="button" class="ws-btn ghost small ws-qd' + (d && d.v === v ? ' sel' : '') + '" data-id="' + x.id + '" data-v="' + v + '" data-title="' + esc(cut(it.title, 120)) + '">' + l + '</button>').join('') + (d ? '<button type="button" class="ws-btn ghost small ws-qd" data-id="' + x.id + '" data-v="">Снять</button>' : '') + '</div></div>'; }).join('') +
+    (arr.length > 60 ? '<div class="ws-note">… и ещё ' + (arr.length - 60) + '</div>' : '') + '</div>').join('') : '<div class="ws-note" style="margin-top:10px">Пунктов нет.</div>';
+}
+
+/* ---------- проверка контрагента (без ИИ) ---------- */
+const LEGAL = new Set(['ооо','оао','зао','пао','ао','нао','ип','гк','llc','ltd','jsc','pjsc','ojsc','cjsc','gmbh','inc','limited','co','plc','sa','ag']);
+function party(){
+  const raw = $('wsPName').value.trim(); if(raw.length < 3) return say($('wsPOut'), 'Введите не менее 3 символов.', 'ws-err');
+  const q = norm(raw).replace(/[«»"'.,()]/g, ' ').split(/\s+/).filter(w => w && !LEGAL.has(w)).join(' ').trim();
+  if(q.length < 3) return say($('wsPOut'), 'Уточните наименование.', 'ws-err');
+  const isInn = /^\d{10,12}$/.test(q);
+  const variants = new Set([q]); if(/[а-я]/.test(q)) latVariants(q).forEach(v => variants.add(v));
+  const words = q.split(' ').filter(w => w.length >= 3);
+  const match = hay => [...variants].some(v => v && hay.includes(v)) || (!isInn && words.length > 1 && words.every(w => hay.includes(w) || latVariants(w).some(v => hay.includes(v))));
+  S.partyHits = S.cards.filter(c => match([c.nt, c.nd, c.ndet, c.ntag].join(' \u0001 ')));
+  const wl = S.watch.filter(r => match(r.hay));
+  const enc = encodeURIComponent(raw);
+  $('wsPOut').innerHTML =
+    (wl.length ? '<div class="ws-wl"><b>Список наблюдения закрытого раздела — совпадение (' + wl.length + ')</b>' + wl.slice(0, 8).map(r => '<div class="ws-note" style="color:var(--ws-text2)">' + esc(r.group) + ': ' + esc(cut(r.cells[0], 120)) + ' — ' + esc(cut(r.cells[2] || '', 220)) + '</div>').join('') + '<div class="ws-note">Сверьте идентификаторы (ИНН, дата рождения, отчество): в списке есть известные ложные совпадения.</div></div>' : '') +
+    (S.partyHits.length ? '<div class="ws-note" style="color:var(--ws-warn)">Упоминания в карточках карты: ' + S.partyHits.length + '. Проверьте, тот ли это субъект.</div>' + S.partyHits.slice(0, 12).map((c, i) => cardHtml(c, i+1)).join('')
+      : '<div class="ws-note">В карточках карты упоминаний «' + esc(raw) + '» нет. Это не означает отсутствия в санкционных списках: карта — обзор мер, а не реестр лиц.</div>') +
+    '<div class="ws-note" style="margin-top:10px">Официальный скрининг (обязателен независимо от результата): <a href="https://sanctionssearch.ofac.treas.gov/" target="_blank" rel="noopener">OFAC SLS (США)</a> · <a href="https://search-uk-sanctions-list.service.gov.uk/" target="_blank" rel="noopener">UK Sanctions List</a> · <a href="https://www.sanctionsmap.eu/" target="_blank" rel="noopener">EU Sanctions Map</a> · <a href="https://www.opensanctions.org/search/?q=' + enc + '" target="_blank" rel="noopener">OpenSanctions (вторичный)</a></div>';
+  $('wsPConcl').classList.remove('ws-hidden'); $('wsPDraftOut').innerHTML = '';
+}
+})();
+
+</script>
+<!-- WS-SCRIPTS-END -->
 </body>
 </html>
