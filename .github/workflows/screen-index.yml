@@ -1,0 +1,72 @@
+# Комплаенс-карта 2.0 — индекс официальных санкционных списков и календарь контрольных дат (без ИИ).
+# Расписание: ежедневно 06:17 и 14:17 по Иркутску (22:17 и 06:17 UTC) — вне окна утренней публикации среза (08:00–11:00).
+# При публикации среза (изменился map-data-open.json) пересобирается только календарь.
+# Публикуемые файлы: screen-index.json, screen-delta.json, deadlines.ics. index.html и map-data-open.json не меняются.
+name: Индекс санкционных списков и календарь
+
+on:
+  schedule:
+    - cron: "17 22 * * *"
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+    paths: [map-data-open.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: screen-index
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Индекс официальных списков
+        if: github.event_name != 'push'
+        run: python3 -I .github/screen/build_screen_index.py . | tee /tmp/screen.log
+
+      - name: Календарь контрольных дат
+        run: python3 -I .github/screen/build_deadlines_ics.py map-data-open.json deadlines.ics
+
+      - name: Проверка файлов
+        run: |
+          python3 - <<'EOF'
+          import json, re, sys
+          ok = True
+          try:
+              d = json.load(open("screen-index.json", encoding="utf-8"))
+              assert d["schema"] == "cm2-screen/1" and len(d["e"]) > 20000, "индекс неполный"
+              print("индекс:", len(d["e"]), "записей;", [(s["id"], s["status"], s["count"]) for s in d["sources"]])
+          except FileNotFoundError:
+              print("индекса ещё нет (запуск по публикации среза)")
+          ics = open("deadlines.ics", encoding="utf-8").read()
+          assert ics.startswith("BEGIN:VCALENDAR") and ics.rstrip().endswith("END:VCALENDAR"), "календарь повреждён"
+          print("календарь: событий", ics.count("BEGIN:VEVENT"))
+          EOF
+
+      - name: Публикация (только три файла)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "cm2-screen-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- screen-index.json screen-delta.json deadlines.ics 2>/dev/null || true
+          if git diff --cached --quiet; then echo "изменений нет"; exit 0; fi
+          git diff --cached --name-only | grep -vxE 'screen-index.json|screen-delta.json|deadlines.ics' && { echo "ОШИБКА: посторонние файлы"; exit 1; } || true
+          git commit -q -m "Индекс списков и календарь: $(date -u +%d.%m.%Y\ %H:%MZ)"
+          for i in 1 2 3; do
+            if git push origin HEAD:main; then pushed=1; break; fi
+            sleep $((20*i)); git pull --rebase -q origin main
+          done
+          [ "${pushed:-}" = 1 ] || { echo "ОШИБКА: push не выполнен"; exit 1; }
+          # коммит, сделанный токеном Actions, может не запускать сборку сайта — запрашиваем её явно
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" >/dev/null && echo "сборка сайта запрошена" || echo "запрос сборки сайта не принят (сайт обновится при следующем коммите среза)"
