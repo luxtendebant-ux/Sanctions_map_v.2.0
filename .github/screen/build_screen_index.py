@@ -115,8 +115,8 @@ def parse_ofac(files, src):
         for m in imo:
             if m not in ids:
                 ids.insert(0, m)
-        out.append(entry(src, row[0], typ, clean(row[1]), alts.get(row[0], []), ofac_dob(rem),
-                         clean(row[3]), "", ids, ", ".join(addr.get(row[0], [])[:3])))
+        out.append(entry(src, row[0], typ, clean(row[1]), alts.get(row[0], []), ofac_dob(rem) if typ == "i" else "",
+                         clean(row[3]).replace("] [", ", ").strip("[] "), "", ids, ", ".join(addr.get(row[0], [])[:3])))
     return out, ""
 
 
@@ -292,7 +292,7 @@ def parse_ch(files):
         if not names:
             continue
         prog = progs.get(t.findtext("sanctions-set-id") or "", "")
-        out.append(entry("CH", t.get("ssid"), typ, names[0], names[1:], ", ".join(dob[:3]), prog, listed, ids[:12], ""))
+        out.append(entry("CH", t.get("ssid"), typ, names[0], names[1:], ", ".join(dob[:3]) if typ == "i" else "", prog, listed, ids[:12], ""))
     return out, date
 
 
@@ -377,6 +377,13 @@ def main():
     COLS = ["s", "i", "t", "n", "a", "b", "p", "l", "x", "c", "f"]
     idx = {"schema": "cm2-screen/1", "built": now.strftime("%Y-%m-%dT%H:%MZ"), "sources": sources, "cols": COLS,
            "e": [[e.get(c, "" if c not in ("a", "x") else []) for c in COLS] for e in entries]}
+    idx["hash"] = hashlib.sha256(json.dumps([idx["e"], [(x["id"], x["status"], x.get("fileDate", ""), x["count"]) for x in sources]],
+                                            ensure_ascii=False).encode("utf-8")).hexdigest()[:24]
+    if prev.get("hash") == idx["hash"] and not added and not removed:
+        # содержание списков не изменилось — файлы не переписываем (не растёт история репозитория)
+        print(json.dumps({"built": prev.get("built"), "unchanged": True, "entries": len(entries),
+                          "sources": [{k: s.get(k) for k in ("id", "status", "count", "fileDate", "error") if s.get(k) is not None} for s in sources]}, ensure_ascii=False))
+        return
     raw = json.dumps(idx, ensure_ascii=False, separators=(",", ":"))
     with open(os.path.join(out_dir, "screen-index.json"), "w", encoding="utf-8") as fh:
         fh.write(raw)
