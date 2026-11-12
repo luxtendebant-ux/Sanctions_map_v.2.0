@@ -12490,7 +12490,9 @@ window.EV_TEST = { matchStopList, evaluate: () => evaluate(), scanSegments, norm
 /* ================= РАЗДЕЛ «РАБОЧЕЕ МЕСТО СК» (версия 2.0) =================
    Инструменты Санкционного комплаенса по данным карты: вопрос по карте, очередь решений, проверка контрагента,
    черновики заключения и письма. Вход — паролем закрытого раздела (проверяется расшифровкой RESTRICTED_ENCRYPTED;
-   пароль не сохраняется). Поиск, очередь и проверка контрагента работают без ИИ и без сетевых запросов.
+   пароль не сохраняется). Поиск, очередь и проверка контрагента работают без ИИ. Проверка по официальным спискам загружает с сайта карты
+   индекс screen-index.json (собирается ежедневно из файлов OFAC, ЕС, Великобритании, Канады, Швейцарии); введённое
+   наименование никуда не передаётся — сравнение выполняется на странице.
    ИИ: по умолчанию — готовый запрос для вставки в Claude (копирование); если пользователь ввёл СВОЙ ключ Claude API —
    ответ прямо на странице (запрос в api.anthropic.com; ключ хранится только в памяти вкладки до закрытия раздела).
    В запросы к ИИ уходят только открытые карточки (до 6, в сокращении) и текст пользователя — сведения закрытого
@@ -12666,15 +12668,15 @@ function open(R){
     '<div class="ws-row"><input type="text" id="wsQ" placeholder="Например: какие лицензии OFAC по Lukoil истекают в ноябре?" autocomplete="off"><button type="button" class="ws-btn ghost" id="wsFind">Найти в карте</button><button type="button" class="ws-btn" id="wsAsk">Спросить Claude</button></div>' +
     '<div id="wsAskAi"></div><div id="wsAskOut"></div></div></section>' +
 
-  '<section data-p="queue" class="ws-hidden"><div class="ws-panel"><h3>Очередь решений</h3><p>Пункты формируются из карты автоматически, без ИИ: незавершённые меры, слухи, истёкшие и истекающие сроки, контрольные даты на 14 дней, карточки без сверки более 30 дней. Отметки сохраняются только в этом браузере; для переноса — экспорт и импорт. Карту отметки не меняют.</p>' +
+  '<section data-p="queue" class="ws-hidden"><div class="ws-panel"><h3>Очередь решений</h3><p>Пункты формируются из карты автоматически, без ИИ: незавершённые меры, слухи, истёкшие и истекающие сроки, контрольные даты на 14 дней, карточки без сверки более 30 дней. Отметки сохраняются только в этом браузере; для переноса — экспорт и импорт. Чтобы решения учла утренняя задача обновления, сохраните экспорт в папку <b>Complaince map_2.0\\decisions</b>: «Нужна проверка» — первыми в плановую сверку, решения по слухам — в карточку слуха. Сама страница карту не меняет.</p>' +
     '<div class="ws-stats" id="wsQStats"></div>' +
     '<div class="ws-row" style="margin-top:8px"><select id="wsQFilter"><option value="open">Без решения</option><option value="all">Все</option><option value="done">С решением</option></select>' +
-    '<button type="button" class="ws-btn ghost small" id="wsQExport">Экспорт отметок (JSON)</button><label class="ws-btn ghost small" style="cursor:pointer">Импорт отметок<input type="file" id="wsQImport" accept="application/json,.json" style="display:none"></label></div>' +
+    '<button type="button" class="ws-btn ghost small" id="wsQExport">Экспорт решений для агента (JSON)</button><label class="ws-btn ghost small" style="cursor:pointer">Импорт отметок<input type="file" id="wsQImport" accept="application/json,.json" style="display:none"></label></div>' +
     '<div class="ws-note" id="wsQStore"></div><div id="wsQList"></div></div></section>' +
 
-  '<section data-p="party" class="ws-hidden"><div class="ws-panel"><h3>Проверка контрагента</h3><p>Поиск наименования, ФИО или ИНН в карточках карты и в списке наблюдения закрытого раздела, без ИИ. Это не замена скрининга по официальным спискам: ссылки на них — в результате.</p>' +
-    '<div class="ws-row"><input type="text" id="wsPName" placeholder="Наименование / ФИО / ИНН (кириллицей или латиницей)" autocomplete="off"><button type="button" class="ws-btn" id="wsPGo">Проверить</button></div>' +
-    '<div id="wsPOut"></div>' +
+  '<section data-p="party" class="ws-hidden"><div class="ws-panel"><h3>Проверка контрагента</h3><p>Три проверки без ИИ: (1) официальные санкционные списки OFAC (SDN и non-SDN), ЕС, Великобритании, Канады и Швейцарии — нечёткое сравнение имён и псевдонимов (кириллица и латиница), идентификаторы (ИНН, ОГРН, IMO, паспорт), дата рождения; (2) карточки карты; (3) список наблюдения закрытого раздела. Наименование никуда не передаётся. Результат — основание для проверки, а не окончательный вывод.</p>' +
+    '<div class="ws-row"><input type="text" id="wsPName" placeholder="Наименование / ФИО / ИНН / IMO (кириллицей или латиницей)" autocomplete="off"><input type="text" id="wsPDob" placeholder="Дата рождения (необяз.)" autocomplete="off" style="max-width:190px"><button type="button" class="ws-btn" id="wsPGo">Проверить</button></div>' +
+    '<div id="wsPOff"></div><div id="wsPOut"></div>' +
     '<div id="wsPConcl" class="ws-hidden" style="margin-top:12px"><p class="ws-note">Черновик «Заключения»: общие сведения → скрининг → значимое обстоятельство → оценка риска → выводы с условиями → оговорка о решении оператора. В запрос к ИИ уходят только открытые карточки и введённые вами факты.</p>' +
       '<textarea id="wsPFacts" placeholder="Факты по сделке: предмет, стороны, страна, валюта и банк платежа, собственники (если известны)"></textarea>' +
       '<div class="ws-row" style="margin-top:6px"><button type="button" class="ws-btn" id="wsPDraft">Черновик заключения</button></div><div id="wsPDraftOut"></div></div></div></section>' +
@@ -12729,11 +12731,13 @@ function bind(){
   /* очередь */
   $('wsQFilter').onchange = renderQueue;
   $('wsQList').onclick = e => { const b = e.target.closest('button.ws-qd'); if(!b) return;
-    const d = lsGet(LS_DEC) || {}; if(b.dataset.v) d[b.dataset.id] = { v: b.dataset.v, at: new Date().toLocaleDateString('ru-RU'), t: b.dataset.title }; else delete d[b.dataset.id];
+    const d = lsGet(LS_DEC) || {}; if(b.dataset.v) d[b.dataset.id] = { v: b.dataset.v, at: new Date().toLocaleDateString('ru-RU'), t: b.dataset.title, k: b.dataset.k || '', c: b.dataset.cat || '', u: b.dataset.u || '' }; else delete d[b.dataset.id];
     if(!lsSet(LS_DEC, d)) $('wsQStore').textContent = 'Браузер не разрешает сохранять данные — отметки действуют до перезагрузки страницы.';
     S.mem = d; renderQueue(); };
   $('wsQExport').onclick = () => { const d = lsGet(LS_DEC) || S.mem || {};
-    const blob = new Blob([JSON.stringify({ schema:'cm2-ws-decisions/1', exported: new Date().toISOString(), cut: cutDate(), decisions: d }, null, 1)], { type:'application/json' });
+    const LBL = Object.fromEntries(DEC), byId = Object.fromEntries(buildQueue().map(x => [x.id, x]));
+    const items = Object.entries(d).map(([id, v]) => { const q = byId[id]; return { id, decision: v.v, label: LBL[v.v] || v.v, at: v.at || '', title: v.t || (q ? plain(q.c.it.title) : ''), card: v.k || (q ? q.c.key : ''), category: v.c || (q ? q.cat : ''), source: v.u || (q ? safeUrl((q.c.it.source || {}).url) : ''), inCurrentQueue: !!q }; });
+    const blob = new Blob([JSON.stringify({ schema:'cm2-ws-decisions/1', exported: new Date().toISOString(), cut: cutDate(), decisions: d, items }, null, 1)], { type:'application/json' });
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'reshenia-SK-' + cutDate().replace(/\./g,'-') + '.json'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); };
   $('wsQImport').onchange = e => { const f = e.target.files && e.target.files[0]; if(!f) return; const r = new FileReader();
     r.onload = () => { try{ const j = JSON.parse(r.result); if(!j || j.schema !== 'cm2-ws-decisions/1' || typeof j.decisions !== 'object') throw new Error('не тот формат');
@@ -12747,7 +12751,7 @@ function bind(){
   $('wsPDraft').onclick = async () => { const facts = $('wsPFacts').value.trim(), name = $('wsPName').value.trim();
     if(!facts) return say($('wsPDraftOut'), 'Опишите факты по сделке — без них заключение будет пустым.', 'ws-err');
     const ctx = S.partyHits.slice(0, 5); const b = $('wsPDraft'); b.disabled = true;
-    await runAI($('wsPDraftOut'), RULES() + ' Подготовь ЧЕРНОВИК «Заключения» Санкционного комплаенса (не более 450 слов) по разделам: 1) Общие сведения; 2) Санкционный скрининг контрагентов (что найдено в карте и что ОБЯЗАТЕЛЬНО проверить по официальным спискам OFAC, ЕС, Великобритании — без утверждений о результатах, которых нет в карточках); 3) Значимое обстоятельство; 4) Оценка риска по сценариям (вероятность, ущерб, горизонт — только реальные риски); 5) Выводы в форме «имеются основания для вывода о … риске» с условиями (а)(б)(в); 6) Оговорка: окончательное решение остаётся за оператором. Где данных нет — «требует проверки».\n\nКОНТРАГЕНТ: ' + name + '\nФАКТЫ (со слов пользователя): ' + facts + '\n\nКАРТОЧКИ КАРТЫ С УПОМИНАНИЯМИ:\n' + (ctx.length ? ctxBlock(ctx) : 'упоминаний в карте нет'), 1500);
+    await runAI($('wsPDraftOut'), RULES() + ' Подготовь ЧЕРНОВИК «Заключения» Санкционного комплаенса (не более 450 слов) по разделам: 1) Общие сведения; 2) Санкционный скрининг контрагентов (результат проверки по официальным спискам — только из блока «СКРИНИНГ» ниже, с датой индекса; что найдено в карте; что остаётся проверить: собственники и правило 50%, банки платежа); 3) Значимое обстоятельство; 4) Оценка риска по сценариям (вероятность, ущерб, горизонт — только реальные риски); 5) Выводы в форме «имеются основания для вывода о … риске» с условиями (а)(б)(в); 6) Оговорка: окончательное решение остаётся за оператором. Где данных нет — «требует проверки».\n\nКОНТРАГЕНТ: ' + name + '\nФАКТЫ (со слов пользователя): ' + facts + '\n\nСКРИНИНГ ПО ОФИЦИАЛЬНЫМ СПИСКАМ:\n' + screenText() + '\n\nКАРТОЧКИ КАРТЫ С УПОМИНАНИЯМИ:\n' + (ctx.length ? ctxBlock(ctx) : 'упоминаний в карте нет'), 1500);
     b.disabled = false; };
 
   /* письмо */
@@ -12819,13 +12823,14 @@ function renderQueue(){
     const it = x.c.it, u = safeUrl((it.source || {}).url), d = dec[x.id];
     return '<div class="ws-qitem"><div><div class="t" style="font-weight:700">' + esc(cut(it.title, 200)) + '</div><div class="ws-note" style="margin-top:2px">' + esc(x.c.gname) + (x.c.sec ? ' · ' + esc(x.c.sec) : '') + ' · ' + esc(x.why) + (u ? ' · ' + aLink(u, 'первоисточник') : '') + '</div>' +
       (d ? '<div class="st">Решение: ' + esc((DEC.find(z => z[0] === d.v) || ['',''])[1]) + ' · ' + esc(d.at || '') + '</div>' : '') + '</div>' +
-      '<div class="dec">' + DEC.map(([v, l]) => '<button type="button" class="ws-btn ghost small ws-qd' + (d && d.v === v ? ' sel' : '') + '" data-id="' + x.id + '" data-v="' + v + '" data-title="' + esc(cut(it.title, 120)) + '">' + l + '</button>').join('') + (d ? '<button type="button" class="ws-btn ghost small ws-qd" data-id="' + x.id + '" data-v="">Снять</button>' : '') + '</div></div>'; }).join('') +
+      '<div class="dec">' + DEC.map(([v, l]) => '<button type="button" class="ws-btn ghost small ws-qd' + (d && d.v === v ? ' sel' : '') + '" data-id="' + x.id + '" data-v="' + v + '" data-title="' + esc(cut(it.title, 120)) + '" data-k="' + esc(x.c.key) + '" data-cat="' + esc(x.cat) + '" data-u="' + esc(u) + '">' + l + '</button>').join('') + (d ? '<button type="button" class="ws-btn ghost small ws-qd" data-id="' + x.id + '" data-v="">Снять</button>' : '') + '</div></div>'; }).join('') +
     (arr.length > 60 ? '<div class="ws-note">… и ещё ' + (arr.length - 60) + '</div>' : '') + '</div>').join('') : '<div class="ws-note" style="margin-top:10px">Пунктов нет.</div>';
 }
 
 /* ---------- проверка контрагента (без ИИ) ---------- */
 const LEGAL = new Set(['ооо','оао','зао','пао','ао','нао','ип','гк','llc','ltd','jsc','pjsc','ojsc','cjsc','gmbh','inc','limited','co','plc','sa','ag']);
 function party(){
+  if(S) S.screen = null;
   const raw = $('wsPName').value.trim(); if(raw.length < 3) return say($('wsPOut'), 'Введите не менее 3 символов.', 'ws-err');
   const q = norm(raw).replace(/[«»"'.,()]/g, ' ').split(/\s+/).filter(w => w && !LEGAL.has(w)).join(' ').trim();
   if(q.length < 3) return say($('wsPOut'), 'Уточните наименование.', 'ws-err');
@@ -12842,7 +12847,134 @@ function party(){
       : '<div class="ws-note">В карточках карты упоминаний «' + esc(raw) + '» нет. Это не означает отсутствия в санкционных списках: карта — обзор мер, а не реестр лиц.</div>') +
     '<div class="ws-note" style="margin-top:10px">Официальный скрининг (обязателен независимо от результата): <a href="https://sanctionssearch.ofac.treas.gov/" target="_blank" rel="noopener">OFAC SLS (США)</a> · <a href="https://search-uk-sanctions-list.service.gov.uk/" target="_blank" rel="noopener">UK Sanctions List</a> · <a href="https://www.sanctionsmap.eu/" target="_blank" rel="noopener">EU Sanctions Map</a> · <a href="https://www.opensanctions.org/search/?q=' + enc + '" target="_blank" rel="noopener">OpenSanctions (вторичный)</a></div>';
   $('wsPConcl').classList.remove('ws-hidden'); $('wsPDraftOut').innerHTML = '';
+  screenOfficial(raw, $('wsPDob').value.trim());
 }
+/* ---------- проверка по официальным санкционным спискам (индекс screen-index.json, без ИИ) ---------- */
+const IDX = { st: 'none', p: null, err: '' };
+const SRCNAME = { OFAC:'OFAC SDN (США)', OFACNS:'OFAC non-SDN (США)', EU:'ЕС', UK:'Великобритания', CA:'Канада', CH:'Швейцария' };
+const TYP = { i:'физлицо', e:'организация', v:'судно', a:'воздушное судно' };
+const NOISE = new Set([...LEGAL, 'obshchestvo','s','ogranichennoi','otvetstvennostiu','aktsionernoe','aktsionernoie','publichnoe','zakritoe','otkritoe','kompania','kompaniia','company','corporation','corp','the','joint','stock','closed','open','public','ooo','zao','pao','oao','ao','ip','of','and','ltd','llc','jsc','pjsc','fzco','fze','dmcc','limited','sro','spa','srl','bv','nv','oy','ab','as','kft','doo','ood','eood','sp','zoo']);
+const canon = t => t.replace(/kh/g,'h').replace(/(ts|tz)/g,'c').replace(/[yj]/g,'i').replace(/ks/g,'x').replace(/ph/g,'f').replace(/w/g,'v').replace(/ie/g,'e').replace(/ii/g,'i').replace(/(.)\1+/g,'$1');
+function ntoks(s){
+  let t = String(s == null ? '' : s).toLowerCase().replace(/ё/g,'е').normalize('NFD').replace(/[̀-ͯ]/g,'');
+  t = translit(t).replace(/[^a-z0-9]+/g,' ').trim();
+  return t ? [...new Set(t.split(' ').filter(w => w && !NOISE.has(w)).map(canon).filter(Boolean))] : [];
+}
+function jw(a, b){
+  if(a === b) return 1; const la = a.length, lb = b.length; if(!la || !lb) return 0;
+  const md = Math.max(0, Math.floor(Math.max(la, lb) / 2) - 1), ma = new Array(la).fill(false), mb = new Array(lb).fill(false);
+  let m = 0; for(let i = 0; i < la; i++){ const lo = Math.max(0, i - md), hi = Math.min(lb - 1, i + md); for(let j = lo; j <= hi; j++){ if(!mb[j] && a[i] === b[j]){ ma[i] = mb[j] = true; m++; break; } } }
+  if(!m) return 0; let k = 0, tr = 0; for(let i = 0; i < la; i++){ if(!ma[i]) continue; while(!mb[k]) k++; if(a[i] !== b[k]) tr++; k++; }
+  const j = (m / la + m / lb + (m - tr / 2) / m) / 3; let p = 0; while(p < 4 && p < la && p < lb && a[p] === b[p]) p++;
+  return j + p * 0.1 * (1 - j);
+}
+async function loadIndex(){
+  if(IDX.st === 'ok') return IDX.p; if(IDX.st === 'loading') return IDX.wait;
+  IDX.st = 'loading';
+  IDX.wait = (async () => {
+    try{
+      if(!/^https?:$/.test(location.protocol)) throw new Error('страница открыта не с сайта карты (' + location.protocol + ') — индекс официальных списков доступен только на сайте');
+      const r = await fetch(new URL('screen-index.json', location.href).href, { cache: 'no-cache' });
+      if(!r.ok) throw new Error('индекс официальных списков не загружен (HTTP ' + r.status + ')');
+      const j = await r.json(); if(!j || j.schema !== 'cm2-screen/1' || !Array.isArray(j.e)) throw new Error('неожиданный формат индекса');
+      const C = j.cols, ix = n => C.indexOf(n), E = j.e.map(r => ({ s:r[ix('s')], i:r[ix('i')], t:r[ix('t')], n:r[ix('n')], a:r[ix('a')] || [], b:r[ix('b')] || '', p:r[ix('p')] || '', l:r[ix('l')] || '', x:r[ix('x')] || [], c:r[ix('c')] || '', f:r[ix('f')] || '' }));
+      const vocab = new Map(), buckets = new Map(), idmap = new Map();
+      E.forEach((e, k) => {
+        e.nt = [e.n, ...e.a].map(nm => ({ nm, t: ntoks(nm) })).filter(z => z.t.length);
+        for(const z of e.nt) for(const t of z.t){ let v = vocab.get(t); if(!v){ v = []; vocab.set(t, v); const b = t.slice(0, 2); (buckets.get(b) || buckets.set(b, []).get(b)).push(t); } if(v[v.length - 1] !== k) v.push(k); }
+        for(const x of e.x){ const id = String(x).toLowerCase().replace(/[^a-z0-9]/g,''); if(id.length >= 5){ (idmap.get(id) || idmap.set(id, []).get(id)).push(k); } }
+      });
+      IDX.p = { meta: j, E, vocab, buckets, idmap }; IDX.st = 'ok'; return IDX.p;
+    }catch(e){ IDX.st = 'err'; IDX.err = e.message; throw e; }
+  })();
+  return IDX.wait;
+}
+function dobCheck(q, b){   // q — введённая дата (ДД.ММ.ГГГГ / ГГГГ-ММ-ДД / ГГГГ); b — даты записи
+  if(!q || !b) return '';
+  const m = /(\d{1,2})[./-](\d{1,2})[./-](\d{4})/.exec(q) || null, iso = /(\d{4})-(\d{2})-(\d{2})/.exec(q), y = /(\d{4})/.exec(q);
+  const Y = iso ? iso[1] : m ? m[3] : y ? y[1] : '', M = iso ? +iso[2] : m ? +m[2] : 0, D = iso ? +iso[3] : m ? +m[1] : 0; if(!Y) return '';
+  const forms = String(b).split(/,\s*/);
+  for(const f of forms){ const fi = /(\d{4})-(\d{2})-(\d{2})/.exec(f), fr = /(\d{1,2})[./](\d{1,2})[./](\d{4})/.exec(f), fy = /(\d{4})/.exec(f);
+    const FY = fi ? fi[1] : fr ? fr[3] : fy ? fy[1] : '', FM = fi ? +fi[2] : fr ? +fr[2] : 0, FD = fi ? +fi[3] : fr ? +fr[1] : 0;
+    if(FY === Y && (!M || !FM || (FM === M && (!D || !FD || FD === D)))) return (M && FM && D && FD) ? 'match' : 'year'; }
+  return 'diff';
+}
+function screenQuery(P, raw, dob){
+  const res = new Map(), qt = ntoks(raw);
+  const put = (k, sc, nm, why) => { const r = res.get(k); if(!r || r.sc < sc) res.set(k, { k, sc, nm, why }); };
+  const digits = (raw.match(/[A-Za-z]{0,3}\d[\dA-Za-z-]{4,}/g) || []).map(x => x.toLowerCase().replace(/[^a-z0-9]/g,'')).filter(x => x.length >= 5 && /\d{5}/.test(x));
+  for(const d of digits) for(const k of (P.idmap.get(d) || [])) put(k, 1, P.E[k].n, 'идентификатор ' + d);
+  const IDL = new Set(['imo','inn','ogrn','ogrnip','kpp','tax','id','no','nomer','passport','pasport','reg','registration','number','okpo','swift','bic']);
+  let qn = qt.filter(t => !/\d/.test(t) && !(digits.length && IDL.has(t)));
+  if(qn.some(t => t.length >= 3)) qn = qn.filter(t => t.length >= 3);
+  if(qn.length){
+    const cand = new Map();     // индекс записи → число совпавших токенов запроса
+    for(const t of qn){ const seen = new Set();
+      const near = t.length >= 4 ? (P.buckets.get(t.slice(0, 2)) || []).filter(v => Math.abs(v.length - t.length) <= 2 && jw(t, v) >= 0.88) : [t];
+      if(!near.includes(t) && P.vocab.has(t)) near.push(t);
+      for(const v of near) for(const k of (P.vocab.get(v) || [])){ if(!seen.has(k)){ seen.add(k); cand.set(k, (cand.get(k) || 0) + 1); } } }
+    const need = qn.length <= 2 ? qn.length : qn.length - 1;
+    for(const [k, n] of cand){ if(n < need) continue; const e = P.E[k];
+      for(const z of e.nt){ let sum = 0, mn = 1, cov = 0;
+        for(const t of qn){ let best = 0; for(const v of z.t){ const s = t === v ? 1 : (t.length >= 4 && v.length >= 3 ? jw(t, v) : 0); if(s > best) best = s; } sum += best; if(best < mn) mn = best; }
+        for(const v of z.t){ if(qn.some(t => t === v || (t.length >= 4 && jw(t, v) >= 0.9))) cov++; }
+        if(mn < 0.82) continue;
+        const sc = 0.75 * (sum / qn.length) + 0.25 * (cov / z.t.length);
+        if(sc >= 0.8) put(k, sc, z.nm, 'имя'); } }
+  }
+  const out = [...res.values()].map(r => { const e = P.E[r.k], dc = e.t === 'i' ? dobCheck(dob, e.b) : '';
+    let sc = r.sc; if(dc === 'match') sc = Math.min(1, sc + 0.05); else if(dc === 'diff') sc -= 0.12;
+    return Object.assign(r, { e, sc, dc }); });
+  return out.sort((a, b) => b.sc - a.sc).slice(0, 25);
+}
+const recUrl = e => e.s === 'OFAC' || e.s === 'OFACNS' ? 'https://sanctionssearch.ofac.treas.gov/Details.aspx?id=' + encodeURIComponent(e.i) : ((IDX.p && (IDX.p.meta.sources.find(s => s.id === e.s) || {}).page) || '');
+const ruDate = s => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ''); return m ? m[3] + '.' + m[2] + '.' + m[1] : (s || ''); };
+function srcLine(meta){
+  const now = Date.now();
+  return meta.sources.map(s => { const fd = s.fileDate || (s.fetched || '').slice(0, 10), age = fd ? Math.floor((now - Date.parse(fd)) / 864e5) : null;
+    const warn = s.status !== 'ok' ? ' — НЕ ОБНОВЛЁН (' + (s.status === 'stale' ? 'использована прежняя версия' : 'нет данных') + ')' : (age != null && age > 14 ? ' — файл регулятора от ' + ruDate(fd) + ' (старше 14 дней)' : '');
+    return (SRCNAME[s.id] || s.id) + ': ' + (s.count || 0) + (fd ? ', на ' + ruDate(fd) : '') + warn; }).join(' · ');
+}
+async function screenOfficial(raw, dob){
+  const el = $('wsPOff'); if(!el) return;
+  el.innerHTML = '<div class="ws-note">Официальные списки: загружаю индекс…</div>';
+  let P; try{ P = await loadIndex(); }catch(e){
+    if(!S || !document.body.contains(el)) return;
+    el.innerHTML = '<div class="ws-wl" style="border-color:var(--ws-red);background:#2b1418"><b>Проверка по официальным спискам не выполнена</b><div class="ws-note">' + esc(e.message) + '. Проверьте по ссылкам ниже вручную.</div></div>'; return; }
+  if(!S || !document.body.contains(el)) return;
+  const t0 = performance.now(), R = screenQuery(P, raw, dob), ms = Math.round(performance.now() - t0);
+  const strong = R.filter(r => r.sc >= 0.93), poss = R.filter(r => r.sc < 0.93);
+  S.screen = { at: new Date(), raw, dob, R, meta: P.meta };
+  const row = r => { const e = r.e, u = safeUrl(recUrl(e));
+    return '<div class="ws-card"><div class="t">' + esc(e.n) + (r.nm !== e.n ? ' <span class="ws-note">(совпадение: ' + esc(r.nm) + ')</span>' : '') + '</div>' +
+      '<div class="m"><span class="ws-badge ' + (r.sc >= 0.93 ? 'b-rumor' : 'b-pending') + '">' + (r.sc >= 0.93 ? 'сильное' : 'возможное') + ' ' + Math.round(r.sc * 100) + '%</span>' + esc(SRCNAME[e.s] || e.s) + ' · запись ' + esc(e.i) + ' · ' + esc(TYP[e.t] || e.t) + (r.why !== 'имя' ? ' · ' + esc(r.why) : '') + '</div>' +
+      '<div class="d">' + (e.b ? 'Дата рождения: ' + esc(e.b) + (r.dc === 'match' ? ' — <b>совпадает</b>' : r.dc === 'year' ? ' — совпадает год' : r.dc === 'diff' ? ' — <b>не совпадает</b>' : '') + '. ' : '') + (e.p ? 'Программа: ' + esc(cut(e.p, 140)) + '. ' : '') + (e.l ? 'Включён: ' + esc(ruDate(e.l)) + '. ' : '') + (e.x.length ? 'Идентификаторы: ' + esc(e.x.slice(0, 6).join(', ')) + '. ' : '') + (e.c ? 'Страна: ' + esc(cut(e.c, 80)) + '.' : '') + '</div>' +
+      (u ? '<div class="m">' + aLink(u, e.s.startsWith('OFAC') ? 'запись в OFAC SLS' : 'официальный поиск по списку') + '</div>' : '') + '</div>'; };
+  el.innerHTML = '<div class="ws-panel" style="margin-top:10px;background:var(--ws-panel2)"><h3>Официальные санкционные списки</h3>' +
+    '<div class="ws-note">Индекс от ' + esc(P.meta.built.replace('T', ' ').replace('Z', ' UTC')) + ' · записей ' + P.E.length + ' · поиск ' + ms + ' мс.<br>' + esc(srcLine(P.meta)) + '</div>' +
+    (R.length ? (strong.length ? '<div class="ws-wl" style="border-color:var(--ws-red);background:#2b1418"><b>Сильные совпадения: ' + strong.length + '</b> — до сверки идентификаторов сделку не проводить; при подтверждении — эскалация.</div>' : '<div class="ws-wl"><b>Сильных совпадений нет; возможные совпадения: ' + poss.length + '</b> — сверьте дату рождения, ИНН/ОГРН, страну.</div>') + R.map(row).join('')
+      : '<div class="ws-ok">Совпадений в официальных списках не найдено (порог 80%). Учтите: списки отражают прямые включения; доля владения 50% и более санкционными лицами (правила OFAC 50%, ЕС, Великобритании) требует отдельной проверки собственников.</div>') +
+    '<div class="ws-row" style="margin-top:8px"><button type="button" class="ws-btn ghost small" id="wsPProto">Скачать протокол проверки (.txt)</button></div></div>';
+  $('wsPProto').onclick = protocol;
+}
+function screenText(){
+  const x = S && S.screen; if(!x) return 'не выполнялся (индекс официальных списков недоступен) — требует проверки';
+  if(!x.R.length) return 'совпадений не найдено (индекс от ' + x.meta.built + '; OFAC, ЕС, Великобритания, Канада, Швейцария; порог 80%)';
+  return 'индекс от ' + x.meta.built + '; совпадений ' + x.R.length + ':\n' + x.R.slice(0, 8).map(r => '- ' + Math.round(r.sc * 100) + '% ' + (SRCNAME[r.e.s] || r.e.s) + ' запись ' + r.e.i + ': ' + r.e.n + (r.e.b ? ', д.р. ' + r.e.b : '') + (r.e.p ? ', ' + cut(r.e.p, 80) : '') + (r.dc === 'diff' ? ' (дата рождения НЕ совпадает)' : r.dc === 'match' ? ' (дата рождения совпадает)' : '')).join('\n');
+}
+function protocol(){
+  const x = S && S.screen; if(!x) return;
+  const L = ['ПРОТОКОЛ САНКЦИОННОГО СКРИНИНГА (Санкционный комплаенс, Комплаенс-карта 2.0)', 'Дата и время проверки: ' + x.at.toLocaleString('ru-RU'), 'Запрос: ' + x.raw + (x.dob ? '; дата рождения: ' + x.dob : ''),
+    'Индекс официальных списков от ' + x.meta.built + '. Источники: ' + srcLine(x.meta), 'Метод: нечёткое сравнение имён и псевдонимов (кириллица/латиница), точное — идентификаторов; порог 80%, «сильное» — от 93%.', ''];
+  if(!x.R.length) L.push('РЕЗУЛЬТАТ: совпадений в официальных списках не найдено.');
+  else { L.push('РЕЗУЛЬТАТ: совпадений ' + x.R.length + ' (сильных ' + x.R.filter(r => r.sc >= 0.93).length + ').');
+    x.R.forEach((r, i) => { const e = r.e; L.push((i + 1) + '. [' + Math.round(r.sc * 100) + '%] ' + (SRCNAME[e.s] || e.s) + ', запись ' + e.i + ' — ' + e.n + (r.nm !== e.n ? ' (совпадение: ' + r.nm + ')' : '') + '; ' + (TYP[e.t] || e.t) + (e.b ? '; д.р. ' + e.b : '') + (e.p ? '; программа: ' + e.p : '') + (e.l ? '; включён ' + e.l : '') + (e.x.length ? '; ид.: ' + e.x.slice(0, 6).join(', ') : '') + '; ' + recUrl(e)); }); }
+  L.push('', 'Упоминаний в карточках карты: ' + ((S.partyHits || []).length) + '.', 'Ограничения: проверка не охватывает косвенное владение (правило 50%) и списки других юрисдикций; совпадение имени не равно идентификации лица. Окончательное решение остаётся за оператором.');
+  const blob = new Blob(['﻿' + L.join('\r\n')], { type: 'text/plain;charset=utf-8' }), a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = 'screening-' + new Date().toISOString().slice(0, 10) + '.txt'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+window.__cmScreenTest = { ntoks, jw, screenQuery, loadIndex };   // для протокола qa/ws_screen_qa.js
+
 })();
 
 </script>
