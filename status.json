@@ -1,11 +1,11 @@
 {
  "schema": "digest-status/1",
- "at": "2026-11-16T22:20:00+08:00",
+ "at": "2026-11-16T22:19:40+08:00",
  "cut": "16.11.2026",
  "rev": 3,
  "result": "none",
- "note": "конвейер подключён к карте 2.0; события среза 16.11.2026 (ЕС, 145 позиций) выпущены вручную",
+ "note": "ключевых событий нет",
  "file": null,
- "map_commit": null,
- "run": null
+ "map_commit": "4f1fa8098f9c9247189ae38f4075b19b086183a7",
+ "run": "https://github.com/luxtendebant-ux/Sanctions_map_v.2.0/actions/runs/43884511677"
 }
