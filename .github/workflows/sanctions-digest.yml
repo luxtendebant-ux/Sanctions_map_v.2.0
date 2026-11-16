@@ -1,0 +1,161 @@
+# Автоматический выпуск санкционного дайджеста по Комплаенс-карте 2.0 (без ИИ).
+# Срабатывает, когда в ветку main попадает новый срез карты (index.html), и собирает PDF
+# только из данных самой карты. Инструмент, журнал, status.json и готовые файлы лежат в ветке
+# digests; в main этот файл ничего не меняет (index.html, map-data-open.json и файлы индекса
+# списков не затрагиваются).
+name: Санкционный дайджест
+
+on:
+  push:
+    branches: [main]
+    paths: [index.html]
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "normal — обычный выпуск; dry-run — только показать решения; force — выпустить текущий срез заново"
+        type: choice
+        default: normal
+        options: [normal, dry-run, force]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sanctions-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Карта (main)
+        uses: actions/checkout@v6
+        with:
+          path: map
+          sparse-checkout: index.html
+          sparse-checkout-cone-mode: false
+
+      - name: Инструмент и журнал (digests)
+        uses: actions/checkout@v6
+        with:
+          ref: digests
+          path: digests
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Зависимости
+        run: |
+          pip install --quiet -r digests/tool/requirements.txt
+          google-chrome --version
+
+      - name: Самопроверка инструмента
+        run: |
+          python -m unittest discover -s digests/tool/tests
+          python digests/tool/build_digest.py --selftest
+
+      - name: Сборка дайджеста
+        id: build
+        env:
+          MODE: ${{ inputs.mode }}
+          DIGEST_PDF_PASSWORD: ${{ secrets.DIGEST_PDF_PASSWORD }}
+        run: |
+          ARGS=""
+          if [ "$MODE" = "dry-run" ]; then ARGS="--dry-run"; fi
+          if [ "$MODE" = "force" ]; then ARGS="--force"; fi
+          set +e
+          python digests/tool/build_digest.py \
+            --map map/index.html \
+            --state digests/ledger.json \
+            --out digests/out \
+            --readme digests/README.md \
+            --report "$RUNNER_TEMP/report.md" \
+            --notes "$RUNNER_TEMP/notes.md" $ARGS
+          CODE=$?
+          set -e
+          if [ -f "$RUNNER_TEMP/report.md" ]; then cat "$RUNNER_TEMP/report.md" >> "$GITHUB_STEP_SUMMARY"; fi
+          exit $CODE
+
+      - name: Публикация в ветке digests
+        if: steps.build.outputs.released == 'true'
+        working-directory: digests
+        env:
+          FILE: ${{ steps.build.outputs.file }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add out ledger.json README.md
+          git commit -m "Дайджест: $FILE"
+          git push origin HEAD:digests
+
+      - name: Выпуск (страница Releases и уведомление подписчикам)
+        if: steps.build.outputs.released == 'true'
+        working-directory: digests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILE: ${{ steps.build.outputs.file }}
+        run: |
+          TAG="digest-$(date -u +%Y%m%d-%H%M%S)"
+          gh release create "$TAG" "out/$FILE" \
+            --target digests \
+            --title "${FILE%.pdf}" \
+            --notes-file "$RUNNER_TEMP/notes.md"
+
+      - name: Пароль не задан — выпуск остановлен
+        if: steps.build.outputs.blocked == 'true'
+        run: |
+          echo "::error::Найдены ключевые события, но дайджест не выпущен: не задан секрет DIGEST_PDF_PASSWORD. Задайте его: Settings → Secrets and variables → Actions → New repository secret; затем Actions → «Санкционный дайджест» → Run workflow (режим normal). Пропущенные события войдут в ближайший выпуск: журнал при остановке не меняется."
+          exit 1
+
+      - name: Итог запуска (status.json в ветке digests)
+        if: always()
+        working-directory: digests
+        env:
+          RELEASED: ${{ steps.build.outputs.released }}
+          BLOCKED: ${{ steps.build.outputs.blocked }}
+          FILE: ${{ steps.build.outputs.file }}
+          BUILD: ${{ steps.build.outcome }}
+          MODE: ${{ inputs.mode }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ "$MODE" = "dry-run" ]; then echo "проверочный запуск — status.json не меняется"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3; do
+            git fetch -q origin digests && git reset -q --hard origin/digests
+            python3 - <<'EOF'
+          import json, os, re, datetime as dt
+          try:
+              html = open("../map/index.html", encoding="utf-8").read()
+              m = re.search(r"\n(?:let|const|var)\s+MAP_META\s*=\s*", html)
+              meta, _ = json.JSONDecoder().raw_decode(html, m.end())
+          except Exception as e:
+              meta = {"error": str(e)[:200]}
+          if os.environ.get("RELEASED") == "true":
+              result = "released"
+          elif os.environ.get("BLOCKED") == "true":
+              result = "blocked"
+          elif os.environ.get("BUILD") != "success":
+              result = "failed"
+          else:
+              result = "none"
+          note = {"released": "дайджест выпущен", "none": "ключевых событий нет",
+                  "blocked": "дайджест не выпущен: не задан секрет DIGEST_PDF_PASSWORD",
+                  "failed": "ошибка сборки — см. отчёт запуска"}[result]
+          now = dt.datetime.now(dt.timezone(dt.timedelta(hours=8))).isoformat(timespec="seconds")
+          st = {"schema": "digest-status/1", "at": now, "cut": meta.get("cut"), "rev": meta.get("rev"),
+                "result": result, "note": note, "file": os.environ.get("FILE") or None,
+                "map_commit": os.environ.get("SHA"), "run": os.environ.get("RUN_URL")}
+          json.dump(st, open("status.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+          print(json.dumps(st, ensure_ascii=False))
+          EOF
+            git add status.json
+            git diff --cached --quiet && exit 0
+            git commit -q -m "Итог запуска: срез $(python3 -c 'import json;s=json.load(open("status.json"));print(s["cut"],"—",s["note"])')"
+            git push -q origin HEAD:digests && exit 0
+            sleep 5
+          done
+          exit 1
