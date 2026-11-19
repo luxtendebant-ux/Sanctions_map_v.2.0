@@ -1,11 +1,11 @@
 {
  "schema": "digest-status/1",
- "at": "2026-11-18T13:00:55+08:00",
- "cut": "18.11.2026",
+ "at": "2026-11-19T09:27:29+08:00",
+ "cut": "19.11.2026",
  "rev": null,
  "result": "none",
  "note": "ключевых событий нет",
  "file": null,
- "map_commit": "920d8728cc21acc8edaf9893430c720b18e7d40f",
- "run": "https://github.com/luxtendebant-ux/Sanctions_map_v.2.0/actions/runs/44241214043"
+ "map_commit": "793916d0ab781011da933281cc5e80a9232a63a5",
+ "run": "https://github.com/luxtendebant-ux/Sanctions_map_v.2.0/actions/runs/44437010789"
 }
