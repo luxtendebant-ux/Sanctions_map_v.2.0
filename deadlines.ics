@@ -7,70 +7,73 @@ X-WR-CALNAME:Комплаенс-карта 2.0 — контрольные
   даты
 X-WR-TIMEZONE:Asia/Irkutsk
 X-WR-CALDESC:Контрольные даты санкционных ме
- р из Комплаенс-карты 2.0 (срез 25.11.2026). Ана
+ р из Комплаенс-карты 2.0 (срез 26.11.2026). Ана
  литический материал\; первоисточник — 
  в карточке.
 REFRESH-INTERVAL;VALUE=DURATION:PT12H
 X-PUBLISHED-TTL:PT12H
 BEGIN:VEVENT
-UID:1a478d29d2e57308bb2e@cm2-deadlines
-DTSTAMP:20261125T170944Z
+UID:73e1d18b457f26eff660@cm2-deadlines
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261126
 DTEND;VALUE=DATE:20261127
-SUMMARY:≈ ЕС: Европейский совет 26–27.11 (по со
- вместному заявлению 12.11 — A)\; проект 22-г
- о пакета представлен Комиссией 23.11.2026 (ST
- ATEMENT/26/2563 — A)\; принятие — Советом ЕС\, да
- та не объявлена
-DESCRIPTION:Европейский совет 26–27.11 (по совме
- стному заявлению 12.11 — A)\; проект 22-го па
+SUMMARY:≈ ЕС: Европейский совет 26–27.11 (совм
+ естное заявление 12.11 — A)\; проект 22-го па
  кета представлен Комиссией 23.11.2026 (STATEMENT
- /26/2563 — A)\; принятие — Советом ЕС\, дата н
- е объявлена\n\nКарточка: ЕС: Еврокомисси
- я 23.11.2026 представила проект 22-го пакета 
- санкций — транзакционный запрет и откл
- ючение от SWIFT около 60 банков\, более 70 су
- дов\, запрет танкеров\, застрахованных в
-  России\, спортивные ограничения\nДата о
- риентировочная.\n\nКомплаенс-карта 2.0\, с
- рез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0
- /
+ /26/2563 — A)\, изложен в Европарламенте 25.11 (
+ SPEECH/26/2580 — A)\; принятие — решением Совет
+ а ЕС\, на 26.11 ак
+DESCRIPTION:Европейский совет 26–27.11 (совмест
+ ное заявление 12.11 — A)\; проект 22-го пакет
+ а представлен Комиссией 23.11.2026 (STATEMENT/26/25
+ 63 — A)\, изложен в Европарламенте 25.11 (SPEECH
+ /26/2580 — A)\; принятие — решением Совета Е
+ С\, на 26.11 актов нет\; там же — предложени
+ е о €45 млрд для Украины на 2027 г.\n\nКарточ
+ ка: ЕС: Еврокомиссия 23.11.2026 представила 
+ проект 22-го пакета санкций — транзакци
+ онный запрет и отключение от SWIFT около 60
+  банков\, более 70 судов\, запрет танкеров
+ \, застрахованных в России\, спортивные 
+ ограничения\nДата ориентировочная.\n\nКо
+ мплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeban
+ t-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:ЕС
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Через 3 дня: ≈ ЕС: Европейский сов
- ет 26–27.11 (по совместному заявлению 12.11 
- — A)\; проект 22-го пакета представлен Ком
- иссией 23.11.2026 (STATEMENT/26/2563 — A)\; п
+ ет 26–27.11 (совместное заявление 12.11 — A)\; 
+ проект 22-го пакета представлен Комисси
+ ей 23.11.2026 (STATEMENT/26/2563 — A)\, излож
 TRIGGER:-P3D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Сегодня: ≈ ЕС: Европейский совет 2
- 6–27.11 (по совместному заявлению 12.11 — A)\;
-  проект 22-го пакета представлен Комисси
- ей 23.11.2026 (STATEMENT/26/2563 — A)\; п
+ 6–27.11 (совместное заявление 12.11 — A)\; про
+ ект 22-го пакета представлен Комиссией 23
+ .11.2026 (STATEMENT/26/2563 — A)\, излож
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:61d716affc8effd222cc@cm2-deadlines
-DTSTAMP:20261125T170944Z
+UID:48ef667a332abb100969@cm2-deadlines
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Россия: Окончание запрета на вывоз 
  авиакеросина (введён с 01.06.2026 до конца н
- оября)\; на 25.11 актов о продлении в переч
- не актов Правительства 19–24.11.2026 не найд
- ено (поиск — C)
+ оября)\; на 26.11 актов о продлении в переч
+ не актов Правительства по 25.11.2026 нет (pravo
+ .gov.ru — A)
 DESCRIPTION:Окончание запрета на вывоз авиак
  еросина (введён с 01.06.2026 до конца ноября)
- \; на 25.11 актов о продлении в перечне акт
- ов Правительства 19–24.11.2026 не найдено (п
- оиск — C)\n\nКомплаенс-карта 2.0\, срез 25.11.20
- 26: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ \; на 26.11 актов о продлении в перечне акт
+ ов Правительства по 25.11.2026 нет (pravo.gov.ru —
+  A)\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://
+ luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:Россия
@@ -78,23 +81,23 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Через 3 дня: Россия: Окончание зап
  рета на вывоз авиакеросина (введён с 01.06
- .2026 до конца ноября)\; на 25.11 актов о прод
- лении в перечне актов Правительства 19–
- 24.
+ .2026 до конца ноября)\; на 26.11 актов о прод
+ лении в перечне актов Правительства по 
+ 25.
 TRIGGER:-P3D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Сегодня: Россия: Окончание запрет
  а на вывоз авиакеросина (введён с 01.06.2026 
- до конца ноября)\; на 25.11 актов о продлен
- ии в перечне актов Правительства 19–24.
+ до конца ноября)\; на 26.11 актов о продлен
+ ии в перечне актов Правительства по 25.
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:5bf1a59c15d28b3f908e@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:Россия: Окончание периода действия 
@@ -105,7 +108,7 @@ DESCRIPTION:Окончание периода действия ставо
  $61\,5/т)\n\nКарточка: Вывозные пошлины на н
  оябрь 2026 г.: нефть и нефтепродукты — 0\; С
  УГ — $61\,5/т\, этан\, бутан и изобутан — $55\,
- 3/т\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https:/
+ 3/т\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https:/
  /luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -126,19 +129,19 @@ TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:72d595b9503f974652cb@cm2-deadlines
-DTSTAMP:20261125T170944Z
+UID:80c23b6dc25b812aa903@cm2-deadlines
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261130
 DTEND;VALUE=DATE:20261201
 SUMMARY:≈ Россия: Ориентировочно — публика
  ция ставок вывозных пошлин на нефть\, не
- фтепродукты и СУГ на декабрь 2026 г.\; на 25.
+ фтепродукты и СУГ на декабрь 2026 г.\; на 26.
  11 не найдены (поиск — н/с)
 DESCRIPTION:Ориентировочно — публикация ста
  вок вывозных пошлин на нефть\, нефтепро
- дукты и СУГ на декабрь 2026 г.\; на 25.11 не на
+ дукты и СУГ на декабрь 2026 г.\; на 26.11 не на
  йдены (поиск — н/с)\nДата ориентировочна
- я.\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://
+ я.\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://
  luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -148,7 +151,7 @@ ACTION:DISPLAY
 DESCRIPTION:Через 3 дня: ≈ Россия: Ориентирово
  чно — публикация ставок вывозных пошли
  н на нефть\, нефтепродукты и СУГ на дека
- брь 2026 г.\; на 25.11 не найдены (поиск — н/с)
+ брь 2026 г.\; на 26.11 не найдены (поиск — н/с)
 TRIGGER:-P3D
 END:VALARM
 BEGIN:VALARM
@@ -156,13 +159,13 @@ ACTION:DISPLAY
 DESCRIPTION:Сегодня: ≈ Россия: Ориентировочн
  о — публикация ставок вывозных пошлин 
  на нефть\, нефтепродукты и СУГ на декабр
- ь 2026 г.\; на 25.11 не найдены (поиск — н/с)
+ ь 2026 г.\; на 26.11 не найдены (поиск — н/с)
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:315f3be32aabc07a06e3@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:Россия: Начало действия квот на выв
@@ -174,7 +177,7 @@ DESCRIPTION:Начало действия квот на вывоз мин
  1457 от 05.11.2026: количественное ограничени
  е на вывоз минеральных удобрений за пре
  делы ЕАЭС с 01.12.2026 по 31.05.2027 — 18 897 098 т\n\nК
- омплаенс-карта 2.0\, срез 25.11.2026: https://luxtendeb
+ омплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeb
  ant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -197,24 +200,24 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:fa77b03e7731ad2a0eb6@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:≈ Россия: Распределение Минсельхоз
  ом квот на вывоз минеральных удобрений 
  (ПП № 1457) — срок 20.11 прошёл\, сведения о р
- аспределении не найдены (н/с)\; квоты дей
- ствуют с 01.12
+ аспределении на 26.11 не найдены (н/с)\; кво
+ ты действуют с 01.12.2026
 DESCRIPTION:Распределение Минсельхозом квот 
  на вывоз минеральных удобрений (ПП № 1457
  ) — срок 20.11 прошёл\, сведения о распреде
- лении не найдены (н/с)\; квоты действуют 
- с 01.12\n\nКарточка: ПП № 1457 от 05.11.2026: колич
- ественное ограничение на вывоз минерал
- ьных удобрений за пределы ЕАЭС с 01.12.2026 
- по 31.05.2027 — 18 897 098 т\nДата ориентировочна
- я.\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://
- luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ лении на 26.11 не найдены (н/с)\; квоты дейс
+ твуют с 01.12.2026\n\nКарточка: ПП № 1457 от 05.11.2
+ 026: количественное ограничение на вывоз
+  минеральных удобрений за пределы ЕАЭС 
+ с 01.12.2026 по 31.05.2027 — 18 897 098 т\nДата ориенти
+ ровочная.\n\nКомплаенс-карта 2.0\, срез 26.11.
+ 2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:Россия
@@ -223,8 +226,8 @@ ACTION:DISPLAY
 DESCRIPTION:Через 3 дня: ≈ Россия: Распределен
  ие Минсельхозом квот на вывоз минераль
  ных удобрений (ПП № 1457) — срок 20.11 прошё
- л\, сведения о распределении не найдены 
- (н/с)\; к
+ л\, сведения о распределении на 26.11 не на
+ йдены
 TRIGGER:-P3D
 END:VALARM
 BEGIN:VALARM
@@ -232,29 +235,31 @@ ACTION:DISPLAY
 DESCRIPTION:Сегодня: ≈ Россия: Распределение 
  Минсельхозом квот на вывоз минеральных
   удобрений (ПП № 1457) — срок 20.11 прошёл\, с
- ведения о распределении не найдены (н/с)
- \; к
+ ведения о распределении на 26.11 не найде
+ ны
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:1c95e61c6f436fee77ed@cm2-deadlines
-DTSTAMP:20261125T170944Z
+UID:4a2324202f845cd99961@cm2-deadlines
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261201
 DTEND;VALUE=DATE:20261202
 SUMMARY:ЕС: Эстония закрывает пункты пропус
  ка на границе с Россией (по сообщениям С
- МИ — C\; протест МИД России 23.11 — A)\; объё
- м решения по первоисточнику не сверен
+ МИ — все\, C\; протест МИД России 23.11 — A)\; 
+ объём решения по первоисточнику Эстони
+ и на 26.11 не сверен (н/с)
 DESCRIPTION:Эстония закрывает пункты пропуск
  а на границе с Россией (по сообщениям СМ
- И — C\; протест МИД России 23.11 — A)\; объём 
- решения по первоисточнику не сверен\n\nК
- арточка: Эстония закрывает все пункты п
- ропуска на границе с Россией с 01.12.2026\; М
- ИД России 23.11.2026 заявил протест\n\nКомпла
- енс-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.git
- hub.io/Sanctions_map_v.2.0/
+ И — все\, C\; протест МИД России 23.11 — A)\; о
+ бъём решения по первоисточнику Эстонии
+  на 26.11 не сверен (н/с)\n\nКарточка: Эстони
+ я закрывает пункты пропуска на границе 
+ с Россией с 01.12.2026 (по СМИ — все)\; МИД Рос
+ сии 23.11.2026 заявил протест\n\nКомплаенс-ка
+ рта 2.0\, срез 26.11.2026: https://luxtendebant-ux.github.io/Sanc
+ tions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:ЕС
@@ -262,24 +267,24 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Через 3 дня: ЕС: Эстония закрывает 
  пункты пропуска на границе с Россией (п
- о сообщениям СМИ — C\; протест МИД Росси
- и 23.11 — A)\; объём решения по первоисточн
- ику не с
+ о сообщениям СМИ — все\, C\; протест МИД Р
+ оссии 23.11 — A)\; объём решения по первоис
+ точнику
 TRIGGER:-P3D
 END:VALARM
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:Сегодня: ЕС: Эстония закрывает пу
  нкты пропуска на границе с Россией (по с
- ообщениям СМИ — C\; протест МИД России 23.
- 11 — A)\; объём решения по первоисточнику 
- не с
+ ообщениям СМИ — все\, C\; протест МИД Рос
+ сии 23.11 — A)\; объём решения по первоисто
+ чнику
 TRIGGER:PT9H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:baa7f2c26d90b2618b97@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261210
 DTEND;VALUE=DATE:20261211
 SUMMARY:США: Вступает в силу приказ FinCEN о за
@@ -295,7 +300,7 @@ DESCRIPTION:Вступает в силу приказ FinCEN о запр
  ротиводействии отмыванию российских д
  енег (разд. 9714): запрет переводов с участ
  ием MEXC Global — с 10.12.2026\n\nКомплаенс-карта 2.
- 0\, срез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map
+ 0\, срез 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map
  _v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -320,7 +325,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:382a143cfa4ac2f2ed43@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261211
 DTEND;VALUE=DATE:20261212
 SUMMARY:США: Истекают специальные лицензии 
@@ -335,7 +340,7 @@ DESCRIPTION:Истекают специальные лицензии OFAC
  NIS (Сербия) 30.10.2026 до 11.12.2026\; лицензии MOL (п
  ереговоры о покупке доли) и JANAF (транспо
  ртировка нефти) — до того же срока\n\nКом
- плаенс-карта 2.0\, срез 25.11.2026: https://luxtendebant-
+ плаенс-карта 2.0\, срез 26.11.2026: https://luxtendebant-
  ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -359,7 +364,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:7a72a15ea3b84158e7f4@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261215
 DTEND;VALUE=DATE:20261216
 SUMMARY:≈ США: Ориентир: оценка последствий
@@ -374,7 +379,7 @@ DESCRIPTION:Ориентир: оценка последствий отк
  0.2026 приостановил пошлины и почти все са
  нкции закона без срока\; действующие са
  нкции OFAC сохраняются\nДата ориентирово
- чная.\n\nКомплаенс-карта 2.0\, срез 25.11.2026: ht
+ чная.\n\nКомплаенс-карта 2.0\, срез 26.11.2026: ht
  tps://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -398,7 +403,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:da46611ccb46f27e69fd@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261218
 DTEND;VALUE=DATE:20261219
 SUMMARY:США: Истекают GL 55F («Сахалин-2»: перев
@@ -413,7 +418,7 @@ DESCRIPTION:Истекают GL 55F («Сахалин-2»: перевоз
  ъявлено\n\nКарточка: GL 55F («Сахалин-2») и GL 
  115D (гражданская атомная энергетика): де
  йствуют до 18.12.2026 — восполнение пропуск
- а\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://l
+ а\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://l
  uxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -437,7 +442,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:470560b6e78a32177b0e@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261219
 DTEND;VALUE=DATE:20261220
 SUMMARY:США: Истекает разрешение GL 131L на пер
@@ -450,7 +455,7 @@ DESCRIPTION:Истекает разрешение GL 131L на перег
  родаже — до 19.12.2026\, текущей деятельност
  и и сворачивания — до 20.02.2027 (сроки впер
  вые разделены)\n\nКомплаенс-карта 2.0\, сре
- з 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ з 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:США
@@ -472,7 +477,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:41ac5c5099d369d86cbe@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Великобритания: Истекает британско
@@ -482,7 +487,7 @@ DESCRIPTION:Истекает британское изъятие для
  ил до 31.12.2026 изъятие для проекта «Сахали
  н-2» в двух генеральных лицензиях (ценов
  ой потолок и «исключённые проекты»)\n\nК
- омплаенс-карта 2.0\, срез 25.11.2026: https://luxtendeb
+ омплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeb
  ant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -504,7 +509,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:554ac39a08b254604b33@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Россия: Окончание особого режима эк
@@ -521,7 +526,7 @@ DESCRIPTION:Окончание особого режима эксплуа
  сплуатации иностранных воздушных судо
  в и двигателей\, полученных в лизинг до 2
  022 г. (изменения в ПП № 412) — проект\n\nКом
- плаенс-карта 2.0\, срез 25.11.2026: https://luxtendebant-
+ плаенс-карта 2.0\, срез 26.11.2026: https://luxtendebant-
  ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -547,7 +552,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:00c833b376b8b33d9da0@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20261231
 DTEND;VALUE=DATE:20270101
 SUMMARY:Россия: Окончание нулевых вывозных 
@@ -563,7 +568,7 @@ DESCRIPTION:Окончание нулевых вывозных пошли
  рт зерна: пошлины на пшеницу\, ячмень и к
  укурузу обнулены до 31.12.2026\; тарифная кв
  ота — только в период 15.02–30.06\n\nКомплае
- нс-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.githu
+ нс-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.githu
  b.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -589,7 +594,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:848536ddafec1a2f3da2@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270102
 SUMMARY:Великобритания: Вступают в силу ген
@@ -607,7 +612,7 @@ DESCRIPTION:Вступают в силу генеральные торг
  торговые лицензии на морскую перевозку
   СПГ «Сахалина-2» в Японию и Республику 
  Корея — с 01.01.2027 по 31.03.2028\n\nКомплаенс-ка
- рта 2.0\, срез 25.11.2026: https://luxtendebant-ux.github.io/Sanc
+ рта 2.0\, срез 26.11.2026: https://luxtendebant-ux.github.io/Sanc
  tions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -633,7 +638,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:d0e0625d22ed670e334e@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270101
 DTEND;VALUE=DATE:20270102
 SUMMARY:Россия: Начало действия тарифных кв
@@ -648,7 +653,7 @@ DESCRIPTION:Начало действия тарифных квот на
  делы ЕАЭС кукурузы и соевых бобов из Пр
  иморского края и Амурской области\; ста
  вки вывозных пошлин на кукурузу этих ре
- гионов\n\nКомплаенс-карта 2.0\, срез 25.11.2026:
+ гионов\n\nКомплаенс-карта 2.0\, срез 26.11.2026:
   https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -672,7 +677,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:3de0d313b9134b45d732@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270103
 DTEND;VALUE=DATE:20270104
 SUMMARY:≈ США: Начало работы нового состава
@@ -691,7 +696,7 @@ DESCRIPTION:Начало работы нового состава Кон
  я партия получила большинство в Палате 
  представителей и Сенате — новый состав
   Конгресса с 03.01.2027\nДата ориентировочна
- я.\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://
+ я.\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://
  luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -717,7 +722,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:0e49329356ea0f36c915@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270109
 DTEND;VALUE=DATE:20270110
 SUMMARY:США: Истекает GL 13S (административные
@@ -726,7 +731,7 @@ DESCRIPTION:Истекает GL 13S (административные о
  перации по Directive 4)\n\nКарточка: GL 13S — адм
  инистративные операции по Directive 4 EO 14024: 
  выпущена 08.10.2026\, действует до 09.01.2027 (зам
- енила GL 13R)\n\nКомплаенс-карта 2.0\, срез 25.11
+ енила GL 13R)\n\nКомплаенс-карта 2.0\, срез 26.11
  .2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -746,7 +751,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:3484f9dd1015ec7099f2@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270110
 DTEND;VALUE=DATE:20270111
 SUMMARY:США: Окончание продлённой приостан
@@ -761,7 +766,7 @@ DESCRIPTION:Окончание продлённой приостанов
  филированных лицах» (50% для Entity List\, MEU List
   и отдельных SDN) до 10.01.2027 — прежний срок 
  истекал 09.11.2026\n\nКомплаенс-карта 2.0\, сре
- з 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ з 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:США
@@ -784,7 +789,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:6ee3d16bb761c25191e4@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270110
 DTEND;VALUE=DATE:20270111
 SUMMARY:КНР: Окончание продлённой приостан
@@ -801,7 +806,7 @@ DESCRIPTION:Окончание продлённой приостанов
  Минкоммерции КНР\, 09.11.2026 — B)\n\nКарточка:
   Литий — контроли на батареи/аноды прио
  становлены\, не РФ-специфичны\n\nКомплае
- нс-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.githu
+ нс-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.githu
  b.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -827,7 +832,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:cd7d2b8417fe3559ad96@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270116
 DTEND;VALUE=DATE:20270117
 SUMMARY:ЕС: Начало работы Офиса ЕС по санкци
@@ -837,7 +842,7 @@ DESCRIPTION:Начало работы Офиса ЕС по санкция
  здала Офис ЕС по санкциям и назначила н
  ового Специального посланника по санкц
  иям Л. Даниельссона (с 06.02.2027)\n\nКомплаен
- с-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.github.
+ с-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.github.
  io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -857,7 +862,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ff582b219af894a99667@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270119
 DTEND;VALUE=DATE:20270120
 SUMMARY:США: Окончание срока замечаний по п
@@ -870,7 +875,7 @@ DESCRIPTION:Окончание срока замечаний по пра
  п к передовым ИИ-чипам через зарубежные
   дата-центры для компаний из стран груп
  пы D:5 (включая Россию) — по лицензии\n\nКо
- мплаенс-карта 2.0\, срез 25.11.2026: https://luxtendeban
+ мплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeban
  t-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -894,7 +899,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:c3fc8deea808d9f9143a@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270131
 DTEND;VALUE=DATE:20270201
 SUMMARY:Россия: Окончание запрета экспорта 
@@ -911,7 +916,7 @@ DESCRIPTION:Окончание запрета экспорта бензи
  удового топлива и газойлей непосредств
  енными производителями продлён по 31.01.20
  27\; режим «n = 0» с 01.11.2026 отменён\n\nКомплае
- нс-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.githu
+ нс-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.githu
  b.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -937,7 +942,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:9b7c0f171881cde6c050@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270202
 DTEND;VALUE=DATE:20270203
 SUMMARY:≈ Россия: Расчётно — окончание 3-ме
@@ -952,7 +957,7 @@ DESCRIPTION:Расчётно — окончание 3-месячного
  ла\, о-ксилола\, п-ксилола и фенола — на 3 
  месяца со дня вступления в силу\nДата ор
  иентировочная.\n\nКомплаенс-карта 2.0\, ср
- ез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ ез 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:Россия
@@ -975,7 +980,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:e39d118f41333e319bec@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270206
 DTEND;VALUE=DATE:20270207
 SUMMARY:ЕС: Л. Даниельссон вступает в должно
@@ -987,7 +992,7 @@ DESCRIPTION:Л. Даниельссон вступает в должнос
  окомиссия создала Офис ЕС по санкциям и
   назначила нового Специального посланн
  ика по санкциям Л. Даниельссона (с 06.02.2027
- )\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://lu
+ )\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://lu
  xtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1009,7 +1014,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:512c4e641d07862ddae8@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270220
 DTEND;VALUE=DATE:20270221
 SUMMARY:США: Истекает разрешение GL 131L на тек
@@ -1023,7 +1028,7 @@ DESCRIPTION:Истекает разрешение GL 131L на текущ
  ереговоров о продаже — до 19.12.2026\, текущ
  ей деятельности и сворачивания — до 20.02
  .2027 (сроки впервые разделены)\n\nКомплаен
- с-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.github.
+ с-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.github.
  io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1047,7 +1052,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:f404b178f372486adeb9@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270226
 DTEND;VALUE=DATE:20270227
 SUMMARY:Великобритания: Истекают генеральн
@@ -1060,7 +1065,7 @@ DESCRIPTION:Истекают генеральные лицензии OFSI
  ка: OFSI продлил генеральные лицензии по 
  структурам «Лукойла»: Lukoil International и бол
  гарские структуры — до 26.02.2027\n\nКомплае
- нс-карта 2.0\, срез 25.11.2026: https://luxtendebant-ux.githu
+ нс-карта 2.0\, срез 26.11.2026: https://luxtendebant-ux.githu
  b.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1084,7 +1089,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:c2d8c700dd8c896ff1e2@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270228
 DTEND;VALUE=DATE:20270301
 SUMMARY:США: Истекает лицензия OFAC для MOL на п
@@ -1100,7 +1105,7 @@ DESCRIPTION:Истекает лицензия OFAC для MOL на под
  ензию NIS (Сербия) 30.10.2026 до 11.12.2026\; лиценз
  ии MOL (переговоры о покупке доли) и JANAF (т
  ранспортировка нефти) — до того же срок
- а\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https://l
+ а\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https://l
  uxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1126,7 +1131,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:eabc5e20b81fd3dcd8c9@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270319
 DTEND;VALUE=DATE:20270320
 SUMMARY:США: Истекает продлённое руководст
@@ -1143,7 +1148,7 @@ DESCRIPTION:Истекает продлённое руководство
  акупок Венгрией российских нефти и газ
  а (по сообщению МИД Венгрии от 17.11.2026\; OFAC
   не публиковал)\n\nКомплаенс-карта 2.0\, ср
- ез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ ез 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:США
@@ -1166,7 +1171,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:8474fc33af14f73d2978@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270407
 DTEND;VALUE=DATE:20270408
 SUMMARY:США: Истекает GL 135 (операции с россий
@@ -1176,7 +1181,7 @@ DESCRIPTION:Истекает GL 135 (операции с российск
  решил операции с дизельным топливом ро
  ссийского происхождения (продажа\, дост
  авка\, выгрузка\, ввоз\, в т.ч. в США) до 07.04
- .2027\n\nКомплаенс-карта 2.0\, срез 25.11.2026: https:
+ .2027\n\nКомплаенс-карта 2.0\, срез 26.11.2026: https:
  //luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1196,7 +1201,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:99b0f16507797c8133d3@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270424
 DTEND;VALUE=DATE:20270425
 SUMMARY:США: Истекают GL 128D (АЗС Lukoil за рубежо
@@ -1206,7 +1211,7 @@ DESCRIPTION:Истекают GL 128D (АЗС Lukoil за рубежом)
  и GL 130B (болгарские структуры Lukoil) — выпу
  щены 15.10.2026\n\nКарточка: GL 128C — сворачива
  ние розничных АЗС Lukoil за пределами РФ\n\n
- Комплаенс-карта 2.0\, срез 25.11.2026: https://luxtend
+ Комплаенс-карта 2.0\, срез 26.11.2026: https://luxtend
  ebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1228,7 +1233,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:50fed81f8590844b585a@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270428
 DTEND;VALUE=DATE:20270429
 SUMMARY:Великобритания: Истекает генеральн
@@ -1240,7 +1245,7 @@ DESCRIPTION:Истекает генеральная лицензия OFSI
  /11112108 — оплата юридических услуг назна
  ченными лицами (замена INT/2026/9512597\, истек
  ающей 28.10.2026)\n\nКомплаенс-карта 2.0\, срез 2
- 5.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ 6.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:Великобритания
@@ -1263,7 +1268,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:5d6fd12832eda635fe21@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270430
 DTEND;VALUE=DATE:20270501
 SUMMARY:≈ Россия: Ориентировочно — окончан
@@ -1280,7 +1285,7 @@ DESCRIPTION:Ориентировочно — окончание 6-мес
  для связи с иностранными спутниками бе
  з решения ГКРЧ — с 01.11.2026 на 6 месяцев\nДа
  та ориентировочная.\n\nКомплаенс-карта 2.
- 0\, срез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map
+ 0\, срез 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map
  _v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1306,7 +1311,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:36b1a3becaf03935166f@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270531
 DTEND;VALUE=DATE:20270601
 SUMMARY:Россия: Окончание квот на вывоз мин
@@ -1316,7 +1321,7 @@ DESCRIPTION:Окончание квот на вывоз минераль
  1457 от 05.11.2026: количественное ограничени
  е на вывоз минеральных удобрений за пре
  делы ЕАЭС с 01.12.2026 по 31.05.2027 — 18 897 098 т\n\nК
- омплаенс-карта 2.0\, срез 25.11.2026: https://luxtendeb
+ омплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeb
  ant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1337,7 +1342,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2cec21cccbc8325dbc19@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270731
 DTEND;VALUE=DATE:20270801
 SUMMARY:ЕС: Окончание срока действия сектор
@@ -1348,7 +1353,7 @@ DESCRIPTION:Окончание срока действия сектора
  ент 833/2014)\, если Совет не продлит их\n\nКа
  рточка: Продление экономических санкци
  й (Регламент 833) ещё на год\n\nКомплаенс-к
- арта 2.0\, срез 25.11.2026: https://luxtendebant-ux.github.io/Sa
+ арта 2.0\, срез 26.11.2026: https://luxtendebant-ux.github.io/Sa
  nctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1372,7 +1377,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:76daf79aa20311fe9b0c@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270911
 DTEND;VALUE=DATE:20270912
 SUMMARY:США: Истекают временные запреты экс
@@ -1384,7 +1389,7 @@ DESCRIPTION:Истекают временные запреты экспо
  арточка: BIS продлил на год временные зап
  реты экспортных привилегий для «Аэрофл
  ота»\, Azur Air и «ЮТэйр» (приказы от 11.09.2026)\n
- \nКомплаенс-карта 2.0\, срез 25.11.2026: https://luxte
+ \nКомплаенс-карта 2.0\, срез 26.11.2026: https://luxte
  ndebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1408,7 +1413,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:c31b5d18c3e21925abad@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20270924
 DTEND;VALUE=DATE:20270925
 SUMMARY:США: Истекает временный запрет эксп
@@ -1420,7 +1425,7 @@ DESCRIPTION:Истекает временный запрет экспор
  : BIS продлил на год временный запрет экс
  портных привилегий для авиакомпании «У
  ральские авиалинии» (приказ от 24.09.2026)\n\n
- Комплаенс-карта 2.0\, срез 25.11.2026: https://luxtend
+ Комплаенс-карта 2.0\, срез 26.11.2026: https://luxtend
  ebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1444,7 +1449,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:3783ccf5893bb0a6c315@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20271006
 DTEND;VALUE=DATE:20271007
 SUMMARY:Великобритания: Истекает лицензия O
@@ -1454,7 +1459,7 @@ DESCRIPTION:Истекает лицензия OFSI на сворачив
  ание договоров страхования Maritime Mutual (INT/
  2026/8893924)\n\nКарточка: OFSI GL INT/2026/8893924 — свор
  ачивание страховых полисов Maritime Mutual\n\nК
- омплаенс-карта 2.0\, срез 25.11.2026: https://luxtendeb
+ омплаенс-карта 2.0\, срез 26.11.2026: https://luxtendeb
  ant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
@@ -1476,7 +1481,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:ed6d750ec5de027b7f61@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20271009
 DTEND;VALUE=DATE:20271010
 SUMMARY:ЕС: Истекает режим санкций ЕС за гиб
@@ -1490,7 +1495,7 @@ DESCRIPTION:Истекает режим санкций ЕС за гибр
  .10.2027 — режим санкций за гибридные дейс
  твия России: в списке 80 физических лиц и
   20 организаций\n\nКомплаенс-карта 2.0\, сре
- з 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+ з 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:ЕС
@@ -1513,7 +1518,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:2ae6cf3632f4db4b3dd4@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20271231
 DTEND;VALUE=DATE:20280101
 SUMMARY:Россия: Окончание срока повышенных 
@@ -1531,7 +1536,7 @@ DESCRIPTION:Окончание срока повышенных ввозн
  алкоголь (35%\, не менее €5 за литр)\, гидро
  пероксид кумола (25%) и резиновая крошка (
  35%) — по 31.12.2027\n\nКомплаенс-карта 2.0\, срез
-  25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
+  26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
 CATEGORIES:Россия
@@ -1556,7 +1561,7 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:c33936f72c33f6db2b20@cm2-deadlines
-DTSTAMP:20261125T170944Z
+DTSTAMP:20261126T012724Z
 DTSTART;VALUE=DATE:20280331
 DTEND;VALUE=DATE:20280401
 SUMMARY:Великобритания: Истекают генеральн
@@ -1570,7 +1575,7 @@ DESCRIPTION:Истекают генеральные торговые ли
  ые лицензии на морскую перевозку СПГ «С
  ахалина-2» в Японию и Республику Корея 
  — с 01.01.2027 по 31.03.2028\n\nКомплаенс-карта 2.0\,
-  срез 25.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.
+  срез 26.11.2026: https://luxtendebant-ux.github.io/Sanctions_map_v.
  2.0/
 URL:https://luxtendebant-ux.github.io/Sanctions_map_v.2.0/
 TRANSP:TRANSPARENT
